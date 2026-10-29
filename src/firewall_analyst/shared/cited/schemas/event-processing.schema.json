@@ -1,0 +1,67 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "algorithm": {
+      "const": "s8-zeek-processing-v2",
+      "title": "Algorithm",
+      "type": "string"
+    },
+    "event_schema_sha256": {
+      "maxLength": 64,
+      "minLength": 64,
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Event Schema Sha256",
+      "type": "string"
+    },
+    "parser_config_sha256": {
+      "maxLength": 64,
+      "minLength": 64,
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Parser Config Sha256",
+      "type": "string"
+    },
+    "parser_implementation_sha256": {
+      "maxLength": 64,
+      "minLength": 64,
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Parser Implementation Sha256",
+      "type": "string"
+    },
+    "parser_runtime_sha256": {
+      "maxLength": 64,
+      "minLength": 64,
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Parser Runtime Sha256",
+      "type": "string"
+    },
+    "parser_version": {
+      "const": "zeek-conn-1.1",
+      "title": "Parser Version",
+      "type": "string"
+    },
+    "projection_version": {
+      "const": "event-v1-json-v1",
+      "title": "Projection Version",
+      "type": "string"
+    },
+    "source_sha256": {
+      "maxLength": 64,
+      "minLength": 64,
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Source Sha256",
+      "type": "string"
+    }
+  },
+  "required": [
+    "algorithm",
+    "source_sha256",
+    "parser_version",
+    "parser_implementation_sha256",
+    "parser_runtime_sha256",
+    "parser_config_sha256",
+    "event_schema_sha256",
+    "projection_version"
+  ],
+  "title": "EventProcessingDescriptor",
+  "type": "object"
+}

@@ -1,0 +1,22 @@
+name: scaffold
+
+on: [push, pull_request]
+
+permissions:
+  contents: read
+
+jobs:
+  keyless-scaffold:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync --frozen
+      - run: uv run ruff check .
+      - run: uv run ruff format --check .
+      - run: uv run python config/schemas/generate.py --check
+      - run: uv run python scripts/check_repo.py --self-test
+      - run: uv run python scripts/check_repo.py
+      - run: uv run pytest --junitxml=pytest-results.xml
+      - run: uv run fwa --json
+      - run: uv run python scripts/demo.py

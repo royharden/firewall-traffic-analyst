@@ -1,0 +1,4 @@
+#!/bin/sh
+set -eu
+uv run --offline --frozen python scripts/check_repo.py --self-test
+uv run --offline --frozen python scripts/check_repo.py --staged

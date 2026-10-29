@@ -1,0 +1,7 @@
+# Canonical offline annotation controls
+
+Only synthetic authored controls are supplied; there are no real-model captures or quality labels here. S8 creates a closed numeric/enum projection, uses canonical S6 whole-input rules/preparation/wrapping, and builds canonical S3 packed Choice/Score/optionalNoul requests. S3 Provider/FixtureIndex and an actual SQLite Ledger own request identity, zero-quota admission, strict lookup and reuse accounting. No S8 replacement provider, ledger, cache or distribution codec remains.
+
+All accounting objects and reviewed fixtures are explicit caller inputs. Offline-only annotation refuses dispatch-capable modes or nonzero outbound quota, requires current source/group/config/context/template bindings, and never changes deterministic flags or proposals. Synthetic capture origin stays mock; misses never fall back to a model. Fractional triage stays fractional; confidence0.6 remains an uncalibrated default. Source usage/cost/latency and current lookup values stay separate, with unknown values null. No SDK, network, credentials, prices, calibration, actual model response or app acceptance follows.
+
+The initial interim mechanics remain in Git history; their meaningful cases migrated to actual canonical consumer tests plus vendored owner conformance. Unchanged owner source provenance and tests live under shared/s3, shared/screen and tests/vendor. Normal CLI analysis still defaults to no annotation; this explicit Python integration alone does not install a live provider.

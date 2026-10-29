@@ -1,0 +1,184 @@
+{
+  "actual_consumer_checks": {
+    "affected_scope": "existingcontroller/typedwire/accounting/callerlimits plus all42S8offlineannotation+companion and currentmovedwrapper",
+    "affected_seconds": 107.35,
+    "current_affected_top_level": 127,
+    "direct_mapped_purpose_cases": 6,
+    "first_seconds": 16.35,
+    "first_top_level": 7,
+    "issues": 0,
+    "junit_sha256": [
+      "15720db01ec199ab50c6492cf6352c4a5ef6bc98dced516295475219d6033431",
+      "44f0020dc6e079b1a08cdbfd01dd2036affc5f28ea088d48d9274dfb71dd2414"
+    ],
+    "limits": "Offline authoredsynthetic mechanics only; no genuinebilling/capture/provideraccess/modelquality/corpus/S8heldout/appacceptance.",
+    "nested_actual_controls": 8,
+    "nested_scope": "6actualpurpose +2owner/consumer/provider/networknegativeguards +canonicalclassaliasidentity",
+    "overlap": "samewrapper is inboth top-levelruns; nested8areimplementationcontrols, notadditiveindependent appcases. No owner386consumer count claim.",
+    "own_detached_wrapper": 1
+  },
+  "component": "S3 provider/callledger purpose successor",
+  "files": [
+    {
+      "copied_path": "src/firewall_analyst/shared/s3/__init__.py",
+      "copied_sha256": "60913c6d12caa4ba9139d870ad493d4a68738580c996662d7ad7b8d71622e1b8",
+      "source_git_blob": "d54c1da1c6df701267a3ccc931aca3852992f333",
+      "source_path": "src/llm_router_eval/shared/__init__.py",
+      "source_sha256": "60913c6d12caa4ba9139d870ad493d4a68738580c996662d7ad7b8d71622e1b8",
+      "test_mapping_only": false
+    },
+    {
+      "copied_path": "src/firewall_analyst/shared/s3/callledger/README.md",
+      "copied_sha256": "bdc63ddb26832750654cdbffc09fca33d46b9e5ef2e0b7b1a34cac4e1cea0c50",
+      "source_git_blob": "4eb6cce7d1bc853da62db8ce048247375caf0916",
+      "source_path": "src/llm_router_eval/shared/callledger/README.md",
+      "source_sha256": "bdc63ddb26832750654cdbffc09fca33d46b9e5ef2e0b7b1a34cac4e1cea0c50",
+      "test_mapping_only": false
+    },
+    {
+      "copied_path": "src/firewall_analyst/shared/s3/callledger/__init__.py",
+      "copied_sha256": "0fe1e2b6e2b49e170e5e483d1406b8c36d1ce8e2b446845aad2bb741b7806571",
+      "source_git_blob": "6bb50990aee74ddaffdfd45933d87eb53d040be8",
+      "source_path": "src/llm_router_eval/shared/callledger/__init__.py",
+      "source_sha256": "0fe1e2b6e2b49e170e5e483d1406b8c36d1ce8e2b446845aad2bb741b7806571",
+      "test_mapping_only": false
+    },
+    {
+      "copied_path": "src/firewall_analyst/shared/s3/callledger/ledger.py",
+      "copied_sha256": "ca38e0776e8b13d95e6ac31087431d45b8c984a40a33f8f8212d7c7bcf16eecb",
+      "source_git_blob": "e3760ba9efbb6cf140a03c412d66b7ff888c7f1c",
+      "source_path": "src/llm_router_eval/shared/callledger/ledger.py",
+      "source_sha256": "ca38e0776e8b13d95e6ac31087431d45b8c984a40a33f8f8212d7c7bcf16eecb",
+      "test_mapping_only": false
+    },
+    {
+      "copied_path": "src/firewall_analyst/shared/s3/callledger/models.py",
+      "copied_sha256": "7274d1eebed5370460d83af6e4187cc74037d0ab600889219423dbcdd81277e7",
+      "source_git_blob": "ad215ff2bbe06472295b06b66487f526cde59eb9",
+      "source_path": "src/llm_router_eval/shared/callledger/models.py",
+      "source_sha256": "7274d1eebed5370460d83af6e4187cc74037d0ab600889219423dbcdd81277e7",
+      "test_mapping_only": false
+    },
+    {
+      "copied_path": "src/firewall_analyst/shared/s3/callledger/pricing.py",
+      "copied_sha256": "daf38f487eeb70b48cc4025c54a19eea581a2d5d00084f534d9f2b9a55056c74",
+      "source_git_blob": "f8d63558e6238f3cabaf2c52611ab3e632dd29c9",
+      "source_path": "src/llm_router_eval/shared/callledger/pricing.py",
+      "source_sha256": "daf38f487eeb70b48cc4025c54a19eea581a2d5d00084f534d9f2b9a55056c74",
+      "test_mapping_only": false
+    },
+    {
+      "copied_path": "src/firewall_analyst/shared/s3/callledger/projection.py",
+      "copied_sha256": "5c0194e299b2c58f85e745ac093063dcb89689ea162ba378a37afc48a0f4dc69",
+      "source_git_blob": "7d20500102b07471caec6362f3b71099ff92df10",
+      "source_path": "src/llm_router_eval/shared/callledger/projection.py",
+      "source_sha256": "5c0194e299b2c58f85e745ac093063dcb89689ea162ba378a37afc48a0f4dc69",
+      "test_mapping_only": false
+    },
+    {
+      "copied_path": "src/firewall_analyst/shared/s3/providers/__init__.py",
+      "copied_sha256": "5294e9e9a55d6f645ba1fae741f467accdf3aae0caf9e9094a46784bff57421f",
+      "source_git_blob": "67b42aa73e0e5cfa72f83c0669198f354ca4ed4a",
+      "source_path": "src/llm_router_eval/shared/providers/__init__.py",
+      "source_sha256": "5294e9e9a55d6f645ba1fae741f467accdf3aae0caf9e9094a46784bff57421f",
+      "test_mapping_only": false
+    },
+    {
+      "copied_path": "src/firewall_analyst/shared/s3/providers/adapters.py",
+      "copied_sha256": "0f04a7f3231c2a22c36541b9cdaeb53214899d4da111f264eab73278847a3023",
+      "source_git_blob": "6baa3035f8bd7a04e54281833ff2fd144ed3f02b",
+      "source_path": "src/llm_router_eval/shared/providers/adapters.py",
+      "source_sha256": "0f04a7f3231c2a22c36541b9cdaeb53214899d4da111f264eab73278847a3023",
+      "test_mapping_only": false
+    },
+    {
+      "copied_path": "src/firewall_analyst/shared/s3/providers/captures.py",
+      "copied_sha256": "0c91934a090d5f1481fd1116c4ee74a073e0cc8b6ee9c1c8d19cacdce2ebde00",
+      "source_git_blob": "a632ff56ae51d0a416c0d08bf3a2090aeddfcbe8",
+      "source_path": "src/llm_router_eval/shared/providers/captures.py",
+      "source_sha256": "0c91934a090d5f1481fd1116c4ee74a073e0cc8b6ee9c1c8d19cacdce2ebde00",
+      "test_mapping_only": false
+    },
+    {
+      "copied_path": "src/firewall_analyst/shared/s3/providers/controller.py",
+      "copied_sha256": "7e607e319bafe93354d04571f82e7fae35365e21fec8d5ce393843f4d41366ac",
+      "source_git_blob": "a82937f5c363b5b069b918c490e8f385e5e65c52",
+      "source_path": "src/llm_router_eval/shared/providers/controller.py",
+      "source_sha256": "7e607e319bafe93354d04571f82e7fae35365e21fec8d5ce393843f4d41366ac",
+      "test_mapping_only": false
+    },
+    {
+      "copied_path": "src/firewall_analyst/shared/s3/providers/images.py",
+      "copied_sha256": "d847124ef8dc76461f3257df2586075f7ca9602bebe4a15009c6a48aefa6aa13",
+      "source_git_blob": "9ff512f336a219cb7b4dedad400b523b4de1447e",
+      "source_path": "src/llm_router_eval/shared/providers/images.py",
+      "source_sha256": "d847124ef8dc76461f3257df2586075f7ca9602bebe4a15009c6a48aefa6aa13",
+      "test_mapping_only": false
+    },
+    {
+      "copied_path": "src/firewall_analyst/shared/s3/providers/models.py",
+      "copied_sha256": "7d00a646f583aec1b77abd8c956f1b0c830726be3c17ce37737ac05841060ea2",
+      "source_git_blob": "a2c2f478b881e1d172085355f9ee347bba919f9f",
+      "source_path": "src/llm_router_eval/shared/providers/models.py",
+      "source_sha256": "7d00a646f583aec1b77abd8c956f1b0c830726be3c17ce37737ac05841060ea2",
+      "test_mapping_only": false
+    },
+    {
+      "copied_path": "src/firewall_analyst/shared/s3/providers/schema.py",
+      "copied_sha256": "a0c4a84b14a95d2834a150e8fa16224ccec03e1a84325b359b92868a61613391",
+      "source_git_blob": "0d84ca157fa6bbd1fac3b7cbc0aba75751f552c3",
+      "source_path": "src/llm_router_eval/shared/providers/schema.py",
+      "source_sha256": "a0c4a84b14a95d2834a150e8fa16224ccec03e1a84325b359b92868a61613391",
+      "test_mapping_only": false
+    },
+    {
+      "copied_path": "src/firewall_analyst/shared/s3/NOTICE.MIT",
+      "copied_sha256": "431665582156c442d0448d1f5cd2e45663ab96e6cf098711ffa58c4bb01b69e6",
+      "source_git_blob": "024bbc5e5a3503b3f719ccb4e68c773e4d840e2a",
+      "source_path": "LICENSE",
+      "source_sha256": "431665582156c442d0448d1f5cd2e45663ab96e6cf098711ffa58c4bb01b69e6",
+      "test_mapping_only": false
+    },
+    {
+      "copied_path": "tests/vendor/s3purpose/callledger/conftest.py",
+      "copied_sha256": "9f3fd2b86d9bc3fd6f5e0074b85a689fdc0c31a113b3c097c32f1e6dfefd6d95",
+      "source_git_blob": "a98d1f4c0921f1fa6d6ec1cdcc4090bd5e3daf2c",
+      "source_path": "tests/callledger/conftest.py",
+      "source_sha256": "28e43e5bf02fee49f0f6b33b17f80ba21d0223c6cd16de03bcb5ee2c3e605c1e",
+      "test_mapping_only": true
+    },
+    {
+      "copied_path": "tests/vendor/s3purpose/callledger/test_child_purpose_reuse.py",
+      "copied_sha256": "3b7c630a71ab2e1c2307e6e2ede3a11a62d116295509c82b85844cf130b41671",
+      "source_git_blob": "c16cb1027d16cc63ebb800dfcbac094196f825af",
+      "source_path": "tests/callledger/test_child_purpose_reuse.py",
+      "source_sha256": "3b791b254c6b0cde835c1c1ae0fe6c983ba6e70911bb5a974ec5d2715b4593ba",
+      "test_mapping_only": true
+    },
+    {
+      "copied_path": "tests/vendor/s3purpose/providers/conftest.py",
+      "copied_sha256": "c1a3e90c3fa5cb232bed20b47aa5ea3f81855d18ede9da68b38b147e00efe09c",
+      "source_git_blob": "b6755a1acadb3b0ebafc7ba5e3d8c02cb59c2b3e",
+      "source_path": "tests/providers/conftest.py",
+      "source_sha256": "b9dd0c50f8c8d07a4fc5c4e8e3c7b6740ef6ea405bf53dcee31ddbff26f64125",
+      "test_mapping_only": true
+    },
+    {
+      "copied_path": "tests/vendor/s3purpose/providers/test_child_purpose_controller.py",
+      "copied_sha256": "732e6f0f44727b00a7359e5c9cfc90875d1491a74854b3753e81f2d6a6cdffc9",
+      "source_git_blob": "a020658c1abc113bef66e50676544ad0f3e7ba3a",
+      "source_path": "tests/providers/test_child_purpose_controller.py",
+      "source_sha256": "5fab62021f0d4cea121994c39b5f9fd3930fc3f17594d49f16205c3987e8fcad",
+      "test_mapping_only": true
+    }
+  ],
+  "history": "Priorc7executions/sourcepins/testassets remain separatelyattributed; onlycurrentledger.py changes, no retrospective proof relabel.",
+  "licence": "NOTICE.MIT",
+  "limits": "Offline purposeconsistency/storedChildBound/rollback only. No generationrepair/rubric24/liveSDK/model/corpus/Gold/S8heldout/quality/appacceptance.",
+  "prior_manifest": "VENDORED.c7-001.json",
+  "prior_manifest_sha256": "3981f92e3742bab89edbd8d9b69c6c8b799e88551907b091984d98963669a9ea",
+  "publication_sha256": "c18c5a2b52a96d408985734422a10dbb48b4255a00b57229f3832add320969a0",
+  "source_closure_14_unchanged": true,
+  "source_commit": "2671816d4f4fc46b9a650fc4c05ae4389dada326",
+  "source_tree": "2887e018acff384fc1a872080f399c2aeb44c5e0"
+}

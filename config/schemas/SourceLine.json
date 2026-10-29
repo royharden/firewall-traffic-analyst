@@ -1,0 +1,20 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "physical_line": {
+      "minimum": 1,
+      "title": "Physical Line",
+      "type": "integer"
+    },
+    "text": {
+      "title": "Text",
+      "type": "string"
+    }
+  },
+  "required": [
+    "physical_line",
+    "text"
+  ],
+  "title": "SourceLine",
+  "type": "object"
+}

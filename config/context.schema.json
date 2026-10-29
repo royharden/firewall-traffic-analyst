@@ -1,0 +1,149 @@
+{
+  "$defs": {
+    "UtcSchedule": {
+      "additionalProperties": false,
+      "properties": {
+        "weekdays": {
+          "items": {
+            "maximum": 6,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "maxItems": 7,
+          "minItems": 1,
+          "title": "Weekdays",
+          "type": "array"
+        },
+        "start_minute": {
+          "exclusiveMaximum": 1440,
+          "minimum": 0,
+          "title": "Start Minute",
+          "type": "integer"
+        },
+        "end_minute": {
+          "exclusiveMinimum": 0,
+          "maximum": 1440,
+          "title": "End Minute",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "weekdays",
+        "start_minute",
+        "end_minute"
+      ],
+      "title": "UtcSchedule",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "context_id": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$",
+      "title": "Context Id",
+      "type": "string"
+    },
+    "kind": {
+      "enum": [
+        "scanner",
+        "monitor",
+        "health_check",
+        "backup",
+        "approved_peer",
+        "maintenance"
+      ],
+      "title": "Kind",
+      "type": "string"
+    },
+    "rule_ids": {
+      "items": {
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$",
+        "type": "string"
+      },
+      "maxItems": 16,
+      "minItems": 1,
+      "title": "Rule Ids",
+      "type": "array"
+    },
+    "active_from_us": {
+      "minimum": 0,
+      "title": "Active From Us",
+      "type": "integer"
+    },
+    "active_until_us": {
+      "minimum": 0,
+      "title": "Active Until Us",
+      "type": "integer"
+    },
+    "expires_us": {
+      "minimum": 0,
+      "title": "Expires Us",
+      "type": "integer"
+    },
+    "schedules": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/UtcSchedule"
+      },
+      "maxItems": 16,
+      "title": "Schedules",
+      "type": "array"
+    },
+    "source_cidrs": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 256,
+      "minItems": 1,
+      "title": "Source Cidrs",
+      "type": "array"
+    },
+    "destination_cidrs": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 256,
+      "minItems": 1,
+      "title": "Destination Cidrs",
+      "type": "array"
+    },
+    "protocols": {
+      "items": {
+        "enum": [
+          "tcp",
+          "udp",
+          "icmp"
+        ],
+        "type": "string"
+      },
+      "maxItems": 3,
+      "minItems": 1,
+      "title": "Protocols",
+      "type": "array"
+    },
+    "destination_ports": {
+      "default": [],
+      "items": {
+        "maximum": 65535,
+        "minimum": 0,
+        "type": "integer"
+      },
+      "maxItems": 256,
+      "title": "Destination Ports",
+      "type": "array"
+    }
+  },
+  "required": [
+    "context_id",
+    "kind",
+    "rule_ids",
+    "active_from_us",
+    "active_until_us",
+    "expires_us",
+    "source_cidrs",
+    "destination_cidrs",
+    "protocols"
+  ],
+  "title": "NetworkContextV1",
+  "type": "object"
+}

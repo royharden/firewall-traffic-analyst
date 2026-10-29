@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "profile_version": "s8-public-evaluation-1",
+  "source_setup_sha256": "9d2e9042ec51586fdfd6c33173a1c7e7a0d25d85ae9b9fff1f4e833c1f1dae5a",
+  "clock_policy": "maximum_observed_event_us",
+  "context_period_policy": "observed_min_to_max_plus_one_us",
+  "internal_cidrs": ["192.0.2.0/24", "2001:db8:1::/48"],
+  "allowed_destinations": ["198.51.100.0/24", "2001:db8:2::/48"],
+  "allowed_services": [
+    {"protocol": "tcp", "port": 443},
+    {"protocol": "udp", "port": 53},
+    {"protocol": "udp", "port": 123}
+  ],
+  "contexts": [
+    {
+      "context_id": "public-scanner", "kind": "scanner",
+      "rule_ids": ["port_scan", "host_sweep"],
+      "source_cidrs": ["192.0.2.240/32"],
+      "destination_cidrs": ["192.0.2.0/24", "2001:db8:1::/48"],
+      "protocols": ["tcp", "udp"], "destination_ports": []
+    },
+    {
+      "context_id": "public-backup", "kind": "backup", "rule_ids": ["large_outbound"],
+      "source_cidrs": ["192.0.2.241/32"], "destination_cidrs": ["198.51.100.241/32"],
+      "protocols": ["tcp"], "destination_ports": [443]
+    },
+    {
+      "context_id": "public-health", "kind": "health_check", "rule_ids": ["beaconing"],
+      "source_cidrs": ["192.0.2.242/32"], "destination_cidrs": ["198.51.100.242/32"],
+      "protocols": ["tcp"], "destination_ports": [443]
+    }
+  ]
+}

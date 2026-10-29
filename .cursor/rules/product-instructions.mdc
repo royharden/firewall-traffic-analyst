@@ -1,0 +1,6 @@
+---
+description: Product commands and data/evidence invariants
+alwaysApply: true
+---
+
+Read the repository-root AGENTS.md. Keep agent operations outside this product repository.

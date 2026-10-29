@@ -1,0 +1,181 @@
+{
+  "$defs": {
+    "LineMapping": {
+      "additionalProperties": false,
+      "properties": {
+        "canonical_line": {
+          "maximum": 9007199254740991,
+          "minimum": 1,
+          "title": "Canonical Line",
+          "type": "integer"
+        },
+        "source_line": {
+          "maximum": 9007199254740991,
+          "minimum": 1,
+          "title": "Source Line",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "source_line",
+        "canonical_line"
+      ],
+      "title": "LineMapping",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "anyOf": [
+        {
+          "properties": {
+            "canonical_text_sha256": {
+              "type": "null"
+            },
+            "newline_policy": {
+              "type": "null"
+            }
+          }
+        },
+        {
+          "properties": {
+            "canonical_text_sha256": {
+              "type": "string"
+            },
+            "newline_policy": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "canonical_text_sha256",
+            "newline_policy"
+          ]
+        }
+      ]
+    },
+    {
+      "if": {
+        "properties": {
+          "line_map": {
+            "minItems": 1
+          }
+        },
+        "required": [
+          "line_map"
+        ]
+      },
+      "then": {
+        "properties": {
+          "canonical_text_sha256": {
+            "type": "string"
+          },
+          "newline_policy": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "canonical_text_sha256",
+          "newline_policy"
+        ]
+      }
+    }
+  ],
+  "description": "Declared source metadata, not an acquisition or normalization implementation.",
+  "properties": {
+    "canonical_text_sha256": {
+      "anyOf": [
+        {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Canonical Text Sha256"
+    },
+    "evidence_artifact_sha256": {
+      "maxLength": 64,
+      "minLength": 64,
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Evidence Artifact Sha256",
+      "type": "string"
+    },
+    "line_map": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/LineMapping"
+      },
+      "maxLength": 10000,
+      "title": "Line Map",
+      "type": "array"
+    },
+    "newline_policy": {
+      "anyOf": [
+        {
+          "enum": [
+            "identity",
+            "crlf-to-lf"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Newline Policy"
+    },
+    "raw_byte_length": {
+      "maximum": 9007199254740991,
+      "minimum": 0,
+      "title": "Raw Byte Length",
+      "type": "integer"
+    },
+    "schema_version": {
+      "const": 1,
+      "default": 1,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "source_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Source Id",
+      "type": "string"
+    },
+    "source_revision": {
+      "maxLength": 512,
+      "minLength": 1,
+      "title": "Source Revision",
+      "type": "string"
+    },
+    "source_sha256": {
+      "maxLength": 64,
+      "minLength": 64,
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Source Sha256",
+      "type": "string"
+    },
+    "source_type": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Source Type",
+      "type": "string"
+    }
+  },
+  "required": [
+    "source_id",
+    "source_type",
+    "source_sha256",
+    "source_revision",
+    "evidence_artifact_sha256",
+    "raw_byte_length"
+  ],
+  "title": "SourceArtifact",
+  "type": "object"
+}

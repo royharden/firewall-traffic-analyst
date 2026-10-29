@@ -1,0 +1,242 @@
+{
+  "$defs": {
+    "EvidenceSupport": {
+      "additionalProperties": false,
+      "properties": {
+        "row_ids": {
+          "items": {
+            "maxLength": 256,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 250000,
+          "minItems": 1,
+          "title": "Row Ids",
+          "type": "array"
+        },
+        "source_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Source Sha256",
+          "type": "string"
+        },
+        "support_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Support Sha256",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_sha256",
+        "row_ids",
+        "support_sha256"
+      ],
+      "title": "EvidenceSupport",
+      "type": "object"
+    },
+    "KeyPart": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$",
+          "title": "Name",
+          "type": "string"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "integer"
+            }
+          ],
+          "title": "Value"
+        }
+      },
+      "required": [
+        "name",
+        "value"
+      ],
+      "title": "KeyPart",
+      "type": "object"
+    },
+    "TimeWindow": {
+      "additionalProperties": false,
+      "description": "Half-open [start_us,end_us), integer UTC epoch microseconds.",
+      "properties": {
+        "end_us": {
+          "minimum": 0,
+          "title": "End Us",
+          "type": "integer"
+        },
+        "start_us": {
+          "minimum": 0,
+          "title": "Start Us",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "start_us",
+        "end_us"
+      ],
+      "title": "TimeWindow",
+      "type": "object"
+    },
+    "TypedStatV1": {
+      "additionalProperties": false,
+      "properties": {
+        "known_count": {
+          "minimum": 0,
+          "title": "Known Count",
+          "type": "integer"
+        },
+        "stat_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$",
+          "title": "Stat Id",
+          "type": "string"
+        },
+        "support": {
+          "$ref": "#/$defs/EvidenceSupport"
+        },
+        "unit": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$",
+          "title": "Unit",
+          "type": "string"
+        },
+        "unknown_count": {
+          "minimum": 0,
+          "title": "Unknown Count",
+          "type": "integer"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Value"
+        }
+      },
+      "required": [
+        "stat_id",
+        "value",
+        "unit",
+        "support",
+        "known_count",
+        "unknown_count"
+      ],
+      "title": "TypedStatV1",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "category_from_rule": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$",
+      "title": "Category From Rule",
+      "type": "string"
+    },
+    "config_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Config Sha256",
+      "type": "string"
+    },
+    "group_id": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Group Id",
+      "type": "string"
+    },
+    "grouping_key": {
+      "items": {
+        "$ref": "#/$defs/KeyPart"
+      },
+      "minItems": 1,
+      "title": "Grouping Key",
+      "type": "array"
+    },
+    "matched_context_ids": {
+      "default": [],
+      "items": {
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$",
+        "type": "string"
+      },
+      "title": "Matched Context Ids",
+      "type": "array"
+    },
+    "quality_flags": {
+      "default": [],
+      "items": {
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$",
+        "type": "string"
+      },
+      "title": "Quality Flags",
+      "type": "array"
+    },
+    "rule_id": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$",
+      "title": "Rule Id",
+      "type": "string"
+    },
+    "rule_version": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$",
+      "title": "Rule Version",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": 1,
+      "default": 1,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "severity_from_rule": {
+      "maximum": 4,
+      "minimum": 1,
+      "title": "Severity From Rule",
+      "type": "integer"
+    },
+    "stats": {
+      "items": {
+        "$ref": "#/$defs/TypedStatV1"
+      },
+      "minItems": 1,
+      "title": "Stats",
+      "type": "array"
+    },
+    "status": {
+      "default": "flagged",
+      "enum": [
+        "flagged",
+        "suppressed",
+        "partial"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "support": {
+      "$ref": "#/$defs/EvidenceSupport"
+    },
+    "window": {
+      "$ref": "#/$defs/TimeWindow"
+    }
+  },
+  "required": [
+    "group_id",
+    "rule_id",
+    "rule_version",
+    "config_sha256",
+    "window",
+    "grouping_key",
+    "support",
+    "stats",
+    "category_from_rule",
+    "severity_from_rule"
+  ],
+  "title": "FlaggedGroupV1",
+  "type": "object"
+}

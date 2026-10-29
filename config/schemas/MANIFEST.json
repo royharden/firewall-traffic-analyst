@@ -1,0 +1,17 @@
+{
+  "files": {
+    "ClaimSupportContractV1.json": "45aeee1991a15b2c2777290ee055e12881b938755ea6f9ff4e98a9eee9f3cccf",
+    "EventV1.json": "d7619809dfae3512167d5c9969aabf28900ab47f1f5a72bdfa725ac257000a9b",
+    "EvidenceRef.json": "791fa44767c5d849de0eecd942adc49e31abf3d629b0e838c278f5f472bb334e",
+    "FlaggedGroupV1.json": "d469b4822ea569d50cf8fbabc52481ce6871e74c195082f38dccb82596d4647a",
+    "GoldEpisodeV1.json": "0cefd645b10a5f2d403df7b1a6ba45dc5e25a257e0579e4c079f584a2289ef29",
+    "GoldManifestV1.json": "13aa80d7ad9adb79a165762c890a73aa61628b8e261c73bd62272cb9cd566b49",
+    "InputLimitsV1.json": "0a5eb7d7c1d16066ef3354a199f1ee9d786cb9a4d84939507037db243b6c5c8d",
+    "ParseIssue.json": "a75c37e7e6ea684b4d68fce6976ce704e25077f32420d122efe934303ab5f17d",
+    "ParseSummaryV1.json": "e5d9a9316b3d180d32d105dc394d5a2cba719262bf579cd19878d81b1b798812",
+    "RuleContext.json": "4a771ba19443a1fdadabb3680fc3adcafa73c68513574f5b3edf4df1dcb77e90",
+    "SourceLine.json": "71747850066892ca4b4dcf615cda58f91744b27997e6f3ac50aa2692399fdb45"
+  },
+  "pydantic": "2.14.1",
+  "scope": "owned boundary shapes; cross-field Pydantic validators also required"
+}

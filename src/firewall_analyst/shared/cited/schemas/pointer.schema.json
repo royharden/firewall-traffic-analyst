@@ -1,0 +1,2131 @@
+{
+  "$defs": {
+    "AdvisoryLocator": {
+      "additionalProperties": false,
+      "properties": {
+        "advisory_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Advisory Id",
+          "type": "string"
+        },
+        "excerpt_sha256": {
+          "anyOf": [
+            {
+              "maxLength": 64,
+              "minLength": 64,
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Excerpt Sha256"
+        },
+        "quote": {
+          "anyOf": [
+            {
+              "maxLength": 32768,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Quote"
+        }
+      },
+      "required": [
+        "advisory_id"
+      ],
+      "title": "AdvisoryLocator",
+      "type": "object"
+    },
+    "AdvisoryPointer": {
+      "additionalProperties": false,
+      "properties": {
+        "evidence_artifact_sha256": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Evidence Artifact Sha256",
+          "type": "string"
+        },
+        "kind": {
+          "const": "advisory:id",
+          "title": "Kind",
+          "type": "string"
+        },
+        "locator": {
+          "$ref": "#/$defs/AdvisoryLocator"
+        },
+        "locator_subtype": {
+          "const": "id",
+          "title": "Locator Subtype",
+          "type": "string"
+        },
+        "provenance_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ArtifactRef"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "schema_version": {
+          "const": 1,
+          "default": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "source_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Source Id",
+          "type": "string"
+        },
+        "source_revision": {
+          "maxLength": 512,
+          "minLength": 1,
+          "title": "Source Revision",
+          "type": "string"
+        },
+        "source_sha256": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Source Sha256",
+          "type": "string"
+        },
+        "source_type": {
+          "const": "advisory_record",
+          "title": "Source Type",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_id",
+        "source_sha256",
+        "source_revision",
+        "evidence_artifact_sha256",
+        "kind",
+        "source_type",
+        "locator_subtype",
+        "locator"
+      ],
+      "title": "AdvisoryPointer",
+      "type": "object"
+    },
+    "ArtifactRef": {
+      "additionalProperties": false,
+      "description": "Logical reference only; no file opener or URL authority.",
+      "properties": {
+        "artifact_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Artifact Id",
+          "type": "string"
+        },
+        "artifact_sha256": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Artifact Sha256",
+          "type": "string"
+        },
+        "profile_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Profile Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "artifact_id",
+        "artifact_sha256",
+        "profile_id"
+      ],
+      "title": "ArtifactRef",
+      "type": "object"
+    },
+    "BoxPx": {
+      "additionalProperties": false,
+      "properties": {
+        "units": {
+          "const": "px",
+          "default": "px",
+          "title": "Units",
+          "type": "string"
+        },
+        "x0": {
+          "minimum": 0,
+          "title": "X0",
+          "type": "number"
+        },
+        "x1": {
+          "minimum": 0,
+          "title": "X1",
+          "type": "number"
+        },
+        "y0": {
+          "minimum": 0,
+          "title": "Y0",
+          "type": "number"
+        },
+        "y1": {
+          "minimum": 0,
+          "title": "Y1",
+          "type": "number"
+        }
+      },
+      "required": [
+        "x0",
+        "y0",
+        "x1",
+        "y1"
+      ],
+      "title": "BoxPx",
+      "type": "object"
+    },
+    "CodeReportLocator": {
+      "additionalProperties": false,
+      "properties": {
+        "coverage_sha256": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Coverage Sha256",
+          "type": "string"
+        },
+        "inventory_sha256": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Inventory Sha256",
+          "type": "string"
+        },
+        "item_id": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Item Id",
+          "type": "string"
+        },
+        "query_sha256": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Query Sha256",
+          "type": "string"
+        },
+        "reference_id": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Reference Id",
+          "type": "string"
+        },
+        "repository_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Repository Id",
+          "type": "string"
+        },
+        "snapshot_id": {
+          "maxLength": 64,
+          "minLength": 40,
+          "title": "Snapshot Id",
+          "type": "string"
+        },
+        "source_kind": {
+          "enum": [
+            "git_commit",
+            "fixture_inventory"
+          ],
+          "title": "Source Kind",
+          "type": "string"
+        }
+      },
+      "required": [
+        "repository_id",
+        "source_kind",
+        "snapshot_id",
+        "inventory_sha256",
+        "item_id",
+        "reference_id",
+        "query_sha256",
+        "coverage_sha256"
+      ],
+      "title": "CodeReportLocator",
+      "type": "object"
+    },
+    "CodeReportPointer": {
+      "additionalProperties": false,
+      "properties": {
+        "evidence_artifact_sha256": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Evidence Artifact Sha256",
+          "type": "string"
+        },
+        "kind": {
+          "const": "doc:section",
+          "title": "Kind",
+          "type": "string"
+        },
+        "locator": {
+          "$ref": "#/$defs/CodeReportLocator"
+        },
+        "locator_subtype": {
+          "const": "report_item",
+          "title": "Locator Subtype",
+          "type": "string"
+        },
+        "provenance_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ArtifactRef"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "schema_version": {
+          "const": 1,
+          "default": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "source_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Source Id",
+          "type": "string"
+        },
+        "source_revision": {
+          "maxLength": 512,
+          "minLength": 1,
+          "title": "Source Revision",
+          "type": "string"
+        },
+        "source_sha256": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Source Sha256",
+          "type": "string"
+        },
+        "source_type": {
+          "const": "code_existence_report",
+          "title": "Source Type",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_id",
+        "source_sha256",
+        "source_revision",
+        "evidence_artifact_sha256",
+        "kind",
+        "source_type",
+        "locator_subtype",
+        "locator"
+      ],
+      "title": "CodeReportPointer",
+      "type": "object"
+    },
+    "DocumentPointer": {
+      "additionalProperties": false,
+      "properties": {
+        "evidence_artifact_sha256": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Evidence Artifact Sha256",
+          "type": "string"
+        },
+        "kind": {
+          "const": "doc:page:bbox",
+          "title": "Kind",
+          "type": "string"
+        },
+        "locator": {
+          "$ref": "#/$defs/RegionLocator"
+        },
+        "locator_subtype": {
+          "const": "region",
+          "title": "Locator Subtype",
+          "type": "string"
+        },
+        "provenance_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ArtifactRef"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "schema_version": {
+          "const": 1,
+          "default": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "source_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Source Id",
+          "type": "string"
+        },
+        "source_revision": {
+          "maxLength": 512,
+          "minLength": 1,
+          "title": "Source Revision",
+          "type": "string"
+        },
+        "source_sha256": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Source Sha256",
+          "type": "string"
+        },
+        "source_type": {
+          "const": "document_page",
+          "title": "Source Type",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_id",
+        "source_sha256",
+        "source_revision",
+        "evidence_artifact_sha256",
+        "kind",
+        "source_type",
+        "locator_subtype",
+        "locator"
+      ],
+      "title": "DocumentPointer",
+      "type": "object"
+    },
+    "EventLocator": {
+      "additionalProperties": false,
+      "properties": {
+        "event_record_sha256": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Event Record Sha256",
+          "type": "string"
+        },
+        "excerpt_sha256": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Excerpt Sha256",
+          "type": "string"
+        },
+        "physical_line_number": {
+          "maximum": 10000000,
+          "minimum": 1,
+          "title": "Physical Line Number",
+          "type": "integer"
+        },
+        "processing_generation": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Processing Generation",
+          "type": "string"
+        },
+        "profile_version": {
+          "const": "s8-zeek-physical-row-v1",
+          "title": "Profile Version",
+          "type": "string"
+        },
+        "quote": {
+          "maxLength": 32768,
+          "minLength": 1,
+          "title": "Quote",
+          "type": "string"
+        },
+        "row_id": {
+          "pattern": "^[0-9a-f]{64}:[1-9][0-9]{0,7}$",
+          "title": "Row Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "quote",
+        "excerpt_sha256",
+        "profile_version",
+        "row_id",
+        "physical_line_number",
+        "processing_generation",
+        "event_record_sha256"
+      ],
+      "title": "EventLocator",
+      "type": "object"
+    },
+    "EventPointer": {
+      "additionalProperties": false,
+      "description": "Physical-row declaration; installed backend still checks access/currentness.",
+      "properties": {
+        "evidence_artifact_sha256": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Evidence Artifact Sha256",
+          "type": "string"
+        },
+        "kind": {
+          "const": "row:id",
+          "title": "Kind",
+          "type": "string"
+        },
+        "locator": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/EventLocator"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "locator_subtype": {
+          "const": "row",
+          "title": "Locator Subtype",
+          "type": "string"
+        },
+        "provenance_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ArtifactRef"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "schema_version": {
+          "const": 1,
+          "default": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "source_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Source Id",
+          "type": "string"
+        },
+        "source_revision": {
+          "maxLength": 512,
+          "minLength": 1,
+          "title": "Source Revision",
+          "type": "string"
+        },
+        "source_sha256": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Source Sha256",
+          "type": "string"
+        },
+        "source_type": {
+          "const": "event_table",
+          "title": "Source Type",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_id",
+        "source_sha256",
+        "source_revision",
+        "evidence_artifact_sha256",
+        "kind",
+        "source_type",
+        "locator_subtype",
+        "locator"
+      ],
+      "title": "EventPointer",
+      "type": "object"
+    },
+    "FragmentLocator": {
+      "additionalProperties": false,
+      "properties": {
+        "excerpt_sha256": {
+          "anyOf": [
+            {
+              "maxLength": 64,
+              "minLength": 64,
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Excerpt Sha256"
+        },
+        "fragment_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Fragment Id",
+          "type": "string"
+        },
+        "quote": {
+          "anyOf": [
+            {
+              "maxLength": 32768,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Quote"
+        }
+      },
+      "required": [
+        "fragment_id"
+      ],
+      "title": "FragmentLocator",
+      "type": "object"
+    },
+    "FragmentPointer": {
+      "additionalProperties": false,
+      "properties": {
+        "evidence_artifact_sha256": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Evidence Artifact Sha256",
+          "type": "string"
+        },
+        "kind": {
+          "const": "url#fragment",
+          "title": "Kind",
+          "type": "string"
+        },
+        "locator": {
+          "$ref": "#/$defs/FragmentLocator"
+        },
+        "locator_subtype": {
+          "const": "fragment",
+          "title": "Locator Subtype",
+          "type": "string"
+        },
+        "provenance_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ArtifactRef"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "schema_version": {
+          "const": 1,
+          "default": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "source_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Source Id",
+          "type": "string"
+        },
+        "source_revision": {
+          "maxLength": 512,
+          "minLength": 1,
+          "title": "Source Revision",
+          "type": "string"
+        },
+        "source_sha256": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Source Sha256",
+          "type": "string"
+        },
+        "source_type": {
+          "const": "saved_web",
+          "title": "Source Type",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_id",
+        "source_sha256",
+        "source_revision",
+        "evidence_artifact_sha256",
+        "kind",
+        "source_type",
+        "locator_subtype",
+        "locator"
+      ],
+      "title": "FragmentPointer",
+      "type": "object"
+    },
+    "LineLocator": {
+      "additionalProperties": false,
+      "properties": {
+        "excerpt_sha256": {
+          "anyOf": [
+            {
+              "maxLength": 64,
+              "minLength": 64,
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Excerpt Sha256"
+        },
+        "line_end": {
+          "maximum": 9007199254740991,
+          "minimum": 1,
+          "title": "Line End",
+          "type": "integer"
+        },
+        "line_start": {
+          "maximum": 9007199254740991,
+          "minimum": 1,
+          "title": "Line Start",
+          "type": "integer"
+        },
+        "quote": {
+          "anyOf": [
+            {
+              "maxLength": 32768,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Quote"
+        }
+      },
+      "required": [
+        "line_start",
+        "line_end"
+      ],
+      "title": "LineLocator",
+      "type": "object"
+    },
+    "LogLocator": {
+      "additionalProperties": false,
+      "properties": {
+        "artifact_byte_end": {
+          "anyOf": [
+            {
+              "maximum": 9007199254740991,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Artifact Byte End"
+        },
+        "artifact_byte_start": {
+          "anyOf": [
+            {
+              "maximum": 9007199254740991,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Artifact Byte Start"
+        },
+        "artifact_coordinate_space": {
+          "const": "redacted_artifact",
+          "default": "redacted_artifact",
+          "title": "Artifact Coordinate Space",
+          "type": "string"
+        },
+        "byte_coordinate_space": {
+          "const": "source_physical",
+          "default": "source_physical",
+          "title": "Byte Coordinate Space",
+          "type": "string"
+        },
+        "excerpt_sha256": {
+          "anyOf": [
+            {
+              "maxLength": 64,
+              "minLength": 64,
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Excerpt Sha256"
+        },
+        "line_end": {
+          "maximum": 9007199254740991,
+          "minimum": 1,
+          "title": "Line End",
+          "type": "integer"
+        },
+        "line_start": {
+          "maximum": 9007199254740991,
+          "minimum": 1,
+          "title": "Line Start",
+          "type": "integer"
+        },
+        "quote": {
+          "anyOf": [
+            {
+              "maxLength": 32768,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Quote"
+        },
+        "source_byte_end": {
+          "anyOf": [
+            {
+              "maximum": 9007199254740991,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Byte End"
+        },
+        "source_byte_start": {
+          "anyOf": [
+            {
+              "maximum": 9007199254740991,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Byte Start"
+        },
+        "view_kind": {
+          "const": "redacted_result",
+          "title": "View Kind",
+          "type": "string"
+        }
+      },
+      "required": [
+        "line_start",
+        "line_end",
+        "view_kind"
+      ],
+      "title": "LogLocator",
+      "type": "object"
+    },
+    "LogPointer": {
+      "additionalProperties": false,
+      "properties": {
+        "evidence_artifact_sha256": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Evidence Artifact Sha256",
+          "type": "string"
+        },
+        "kind": {
+          "const": "file:line",
+          "title": "Kind",
+          "type": "string"
+        },
+        "locator": {
+          "$ref": "#/$defs/LogLocator"
+        },
+        "locator_subtype": {
+          "const": "line",
+          "title": "Locator Subtype",
+          "type": "string"
+        },
+        "provenance_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ArtifactRef"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "schema_version": {
+          "const": 1,
+          "default": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "source_id": {
+          "maxLength": 64,
+          "pattern": "^[A-Za-z0-9_-]{1,64}$",
+          "title": "Source Id",
+          "type": "string"
+        },
+        "source_revision": {
+          "maxLength": 512,
+          "minLength": 1,
+          "title": "Source Revision",
+          "type": "string"
+        },
+        "source_sha256": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Source Sha256",
+          "type": "string"
+        },
+        "source_type": {
+          "const": "configured_log",
+          "title": "Source Type",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_id",
+        "source_sha256",
+        "source_revision",
+        "evidence_artifact_sha256",
+        "kind",
+        "source_type",
+        "locator_subtype",
+        "locator"
+      ],
+      "title": "LogPointer",
+      "type": "object"
+    },
+    "MetricLocator": {
+      "additionalProperties": false,
+      "properties": {
+        "dataset_id": {
+          "maxLength": 43,
+          "minLength": 43,
+          "pattern": "^s9-dataset-[0-9a-f]{32}$",
+          "title": "Dataset Id",
+          "type": "string"
+        },
+        "expected": {
+          "$ref": "#/$defs/MetricSupport"
+        },
+        "metric_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Metric Id",
+          "type": "string"
+        },
+        "profile": {
+          "const": "s9-metric-row.v1",
+          "title": "Profile",
+          "type": "string"
+        },
+        "row_sha256": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Row Sha256",
+          "type": "string"
+        },
+        "scope": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Scope",
+          "type": "string"
+        },
+        "snapshot_id": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Snapshot Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "profile",
+        "dataset_id",
+        "snapshot_id",
+        "row_sha256",
+        "metric_id",
+        "scope",
+        "expected"
+      ],
+      "title": "MetricLocator",
+      "type": "object"
+    },
+    "MetricPointer": {
+      "additionalProperties": false,
+      "description": "Whole metric evidence declaration, never independent performance approval.",
+      "properties": {
+        "evidence_artifact_sha256": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Evidence Artifact Sha256",
+          "type": "string"
+        },
+        "kind": {
+          "const": "row:id",
+          "title": "Kind",
+          "type": "string"
+        },
+        "locator": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/MetricLocator"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "locator_subtype": {
+          "const": "metric",
+          "title": "Locator Subtype",
+          "type": "string"
+        },
+        "provenance_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ArtifactRef"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "schema_version": {
+          "const": 1,
+          "default": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "source_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Source Id",
+          "type": "string"
+        },
+        "source_revision": {
+          "maxLength": 512,
+          "minLength": 1,
+          "title": "Source Revision",
+          "type": "string"
+        },
+        "source_sha256": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Source Sha256",
+          "type": "string"
+        },
+        "source_type": {
+          "const": "metric_table",
+          "title": "Source Type",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_id",
+        "source_sha256",
+        "source_revision",
+        "evidence_artifact_sha256",
+        "kind",
+        "source_type",
+        "locator_subtype",
+        "locator"
+      ],
+      "title": "MetricPointer",
+      "type": "object"
+    },
+    "MetricSupport": {
+      "additionalProperties": false,
+      "description": "Whole retained producer support. A valid record can exceed citation byte caps.",
+      "properties": {
+        "N": {
+          "maximum": 5000,
+          "minimum": 0,
+          "title": "N",
+          "type": "integer"
+        },
+        "cohort_semantics": {
+          "enum": [
+            "rate_cohort",
+            "trend_union",
+            "diagnostic_single",
+            "availability_empty"
+          ],
+          "title": "Cohort Semantics",
+          "type": "string"
+        },
+        "computed_by": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Computed By",
+          "type": "string"
+        },
+        "definition": {
+          "maxLength": 32768,
+          "minLength": 1,
+          "title": "Definition",
+          "type": "string"
+        },
+        "denominator": {
+          "maxLength": 301,
+          "minLength": 1,
+          "pattern": "^-?(0|[1-9][0-9]{0,299})$",
+          "title": "Denominator",
+          "type": "string"
+        },
+        "dimension": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Dimension",
+          "type": "string"
+        },
+        "eligible_source_ids": {
+          "items": {
+            "maxLength": 256,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxLength": 5000,
+          "title": "Eligible Source Ids",
+          "type": "array"
+        },
+        "excluded_size": {
+          "maximum": 5000,
+          "minimum": 0,
+          "title": "Excluded Size",
+          "type": "integer"
+        },
+        "excluded_source_ids": {
+          "items": {
+            "maxLength": 256,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxLength": 5000,
+          "title": "Excluded Source Ids",
+          "type": "array"
+        },
+        "family": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Family",
+          "type": "string"
+        },
+        "key": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Key",
+          "type": "string"
+        },
+        "metric_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Metric Id",
+          "type": "string"
+        },
+        "n": {
+          "maximum": 5000,
+          "minimum": 0,
+          "title": "N",
+          "type": "integer"
+        },
+        "numerator": {
+          "maxLength": 301,
+          "minLength": 1,
+          "pattern": "^-?(0|[1-9][0-9]{0,299})$",
+          "title": "Numerator",
+          "type": "string"
+        },
+        "sample_size": {
+          "maximum": 5000,
+          "minimum": 0,
+          "title": "Sample Size",
+          "type": "integer"
+        },
+        "schema_version": {
+          "const": 1,
+          "default": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "scope": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Scope",
+          "type": "string"
+        },
+        "snapshot_id": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Snapshot Id",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "ok",
+            "insufficient_data",
+            "unavailable"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "status_reason": {
+          "anyOf": [
+            {
+              "enum": [
+                "minimum_eligible_n_5",
+                "zero_eligible_impressions",
+                "arithmetic_out_of_range",
+                "missing_time",
+                "no_positive_impressions"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Status Reason"
+        },
+        "unit": {
+          "enum": [
+            "ratio",
+            "percentage_points"
+          ],
+          "title": "Unit",
+          "type": "string"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "maxLength": 43,
+              "minLength": 1,
+              "pattern": "^-?(0|[1-9][0-9]{0,31})(\\.[0-9]{1,8})?$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Value"
+        },
+        "windows": {
+          "items": {
+            "$ref": "#/$defs/WindowSupport"
+          },
+          "maxLength": 2,
+          "title": "Windows",
+          "type": "array"
+        }
+      },
+      "required": [
+        "metric_id",
+        "snapshot_id",
+        "scope",
+        "definition",
+        "value",
+        "unit",
+        "sample_size",
+        "excluded_size",
+        "computed_by",
+        "status",
+        "status_reason",
+        "n",
+        "N",
+        "cohort_semantics",
+        "numerator",
+        "denominator",
+        "family",
+        "dimension",
+        "key",
+        "eligible_source_ids",
+        "excluded_source_ids",
+        "windows"
+      ],
+      "title": "MetricSupport",
+      "type": "object"
+    },
+    "ProductLocator": {
+      "additionalProperties": false,
+      "properties": {
+        "dataset_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Dataset Id",
+          "type": "string"
+        },
+        "excerpt_sha256": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Excerpt Sha256",
+          "type": "string"
+        },
+        "field_id": {
+          "enum": [
+            "id",
+            "name",
+            "brand",
+            "size",
+            "unit",
+            "price",
+            "category",
+            "description"
+          ],
+          "title": "Field Id",
+          "type": "string"
+        },
+        "quote": {
+          "maxLength": 32768,
+          "minLength": 1,
+          "title": "Quote",
+          "type": "string"
+        },
+        "record_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Record Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "quote",
+        "excerpt_sha256",
+        "dataset_id",
+        "record_id",
+        "field_id"
+      ],
+      "title": "ProductLocator",
+      "type": "object"
+    },
+    "ProductPointer": {
+      "additionalProperties": false,
+      "properties": {
+        "evidence_artifact_sha256": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Evidence Artifact Sha256",
+          "type": "string"
+        },
+        "kind": {
+          "const": "row:id",
+          "title": "Kind",
+          "type": "string"
+        },
+        "locator": {
+          "$ref": "#/$defs/ProductLocator"
+        },
+        "locator_subtype": {
+          "const": "record_field",
+          "title": "Locator Subtype",
+          "type": "string"
+        },
+        "provenance_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ArtifactRef"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "schema_version": {
+          "const": 1,
+          "default": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "source_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Source Id",
+          "type": "string"
+        },
+        "source_revision": {
+          "maxLength": 512,
+          "minLength": 1,
+          "title": "Source Revision",
+          "type": "string"
+        },
+        "source_sha256": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Source Sha256",
+          "type": "string"
+        },
+        "source_type": {
+          "const": "product_catalog",
+          "title": "Source Type",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_id",
+        "source_sha256",
+        "source_revision",
+        "evidence_artifact_sha256",
+        "kind",
+        "source_type",
+        "locator_subtype",
+        "locator"
+      ],
+      "title": "ProductPointer",
+      "type": "object"
+    },
+    "RegionLocator": {
+      "additionalProperties": false,
+      "properties": {
+        "bbox_px": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/BoxPx"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "document_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Document Id",
+          "type": "string"
+        },
+        "excerpt_sha256": {
+          "anyOf": [
+            {
+              "maxLength": 64,
+              "minLength": 64,
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Excerpt Sha256"
+        },
+        "height_px": {
+          "maximum": 9007199254740991,
+          "minimum": 1,
+          "title": "Height Px",
+          "type": "integer"
+        },
+        "line_ids": {
+          "anyOf": [
+            {
+              "items": {
+                "maxLength": 256,
+                "minLength": 1,
+                "type": "string"
+              },
+              "maxLength": 10000,
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Line Ids"
+        },
+        "origin": {
+          "const": "top-left",
+          "default": "top-left",
+          "title": "Origin",
+          "type": "string"
+        },
+        "page_digest_algorithm": {
+          "const": "rgba8-source-grid-v1",
+          "title": "Page Digest Algorithm",
+          "type": "string"
+        },
+        "page_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Page Id",
+          "type": "string"
+        },
+        "page_index": {
+          "maximum": 9007199254740991,
+          "minimum": 0,
+          "title": "Page Index",
+          "type": "integer"
+        },
+        "page_sha256": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Page Sha256",
+          "type": "string"
+        },
+        "source_grid_profile": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Source Grid Profile",
+          "type": "string"
+        },
+        "transform_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ArtifactRef"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "units": {
+          "const": "px",
+          "default": "px",
+          "title": "Units",
+          "type": "string"
+        },
+        "width_px": {
+          "maximum": 9007199254740991,
+          "minimum": 1,
+          "title": "Width Px",
+          "type": "integer"
+        },
+        "word_ids": {
+          "anyOf": [
+            {
+              "items": {
+                "maxLength": 256,
+                "minLength": 1,
+                "type": "string"
+              },
+              "maxLength": 10000,
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Word Ids"
+        }
+      },
+      "required": [
+        "document_id",
+        "page_id",
+        "page_index",
+        "page_sha256",
+        "page_digest_algorithm",
+        "source_grid_profile",
+        "width_px",
+        "height_px"
+      ],
+      "title": "RegionLocator",
+      "type": "object"
+    },
+    "RepositoryLocator": {
+      "additionalProperties": false,
+      "properties": {
+        "definition_kind": {
+          "enum": [
+            "path",
+            "module",
+            "function",
+            "class",
+            "cli_flag",
+            "http_route",
+            "config_key"
+          ],
+          "title": "Definition Kind",
+          "type": "string"
+        },
+        "inventory_sha256": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Inventory Sha256",
+          "type": "string"
+        },
+        "line_end": {
+          "maximum": 9007199254740991,
+          "minimum": 1,
+          "title": "Line End",
+          "type": "integer"
+        },
+        "line_start": {
+          "maximum": 9007199254740991,
+          "minimum": 1,
+          "title": "Line Start",
+          "type": "integer"
+        },
+        "path": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "Path",
+          "type": "string"
+        },
+        "repository_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Repository Id",
+          "type": "string"
+        },
+        "snapshot_id": {
+          "maxLength": 64,
+          "minLength": 40,
+          "title": "Snapshot Id",
+          "type": "string"
+        },
+        "source_kind": {
+          "enum": [
+            "git_commit",
+            "fixture_inventory"
+          ],
+          "title": "Source Kind",
+          "type": "string"
+        }
+      },
+      "required": [
+        "repository_id",
+        "source_kind",
+        "snapshot_id",
+        "inventory_sha256",
+        "path",
+        "line_start",
+        "line_end",
+        "definition_kind"
+      ],
+      "title": "RepositoryLocator",
+      "type": "object"
+    },
+    "RepositoryPointer": {
+      "additionalProperties": false,
+      "properties": {
+        "evidence_artifact_sha256": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Evidence Artifact Sha256",
+          "type": "string"
+        },
+        "kind": {
+          "const": "file:line",
+          "title": "Kind",
+          "type": "string"
+        },
+        "locator": {
+          "$ref": "#/$defs/RepositoryLocator"
+        },
+        "locator_subtype": {
+          "const": "line",
+          "title": "Locator Subtype",
+          "type": "string"
+        },
+        "provenance_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ArtifactRef"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "schema_version": {
+          "const": 1,
+          "default": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "source_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Source Id",
+          "type": "string"
+        },
+        "source_revision": {
+          "maxLength": 512,
+          "minLength": 1,
+          "title": "Source Revision",
+          "type": "string"
+        },
+        "source_sha256": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Source Sha256",
+          "type": "string"
+        },
+        "source_type": {
+          "const": "repository_file",
+          "title": "Source Type",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_id",
+        "source_sha256",
+        "source_revision",
+        "evidence_artifact_sha256",
+        "kind",
+        "source_type",
+        "locator_subtype",
+        "locator"
+      ],
+      "title": "RepositoryPointer",
+      "type": "object"
+    },
+    "ScreenshotPointer": {
+      "additionalProperties": false,
+      "properties": {
+        "evidence_artifact_sha256": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Evidence Artifact Sha256",
+          "type": "string"
+        },
+        "kind": {
+          "const": "doc:page:bbox",
+          "title": "Kind",
+          "type": "string"
+        },
+        "locator": {
+          "$ref": "#/$defs/RegionLocator"
+        },
+        "locator_subtype": {
+          "const": "source_region",
+          "title": "Locator Subtype",
+          "type": "string"
+        },
+        "provenance_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ArtifactRef"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "schema_version": {
+          "const": 1,
+          "default": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "source_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Source Id",
+          "type": "string"
+        },
+        "source_revision": {
+          "maxLength": 512,
+          "minLength": 1,
+          "title": "Source Revision",
+          "type": "string"
+        },
+        "source_sha256": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Source Sha256",
+          "type": "string"
+        },
+        "source_type": {
+          "const": "screenshot_collection",
+          "title": "Source Type",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_id",
+        "source_sha256",
+        "source_revision",
+        "evidence_artifact_sha256",
+        "kind",
+        "source_type",
+        "locator_subtype",
+        "locator"
+      ],
+      "title": "ScreenshotPointer",
+      "type": "object"
+    },
+    "SectionLocator": {
+      "additionalProperties": false,
+      "properties": {
+        "excerpt_sha256": {
+          "anyOf": [
+            {
+              "maxLength": 64,
+              "minLength": 64,
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Excerpt Sha256"
+        },
+        "quote": {
+          "anyOf": [
+            {
+              "maxLength": 32768,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Quote"
+        },
+        "section_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Section Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "section_id"
+      ],
+      "title": "SectionLocator",
+      "type": "object"
+    },
+    "SectionPointer": {
+      "additionalProperties": false,
+      "properties": {
+        "evidence_artifact_sha256": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Evidence Artifact Sha256",
+          "type": "string"
+        },
+        "kind": {
+          "const": "doc:section",
+          "title": "Kind",
+          "type": "string"
+        },
+        "locator": {
+          "$ref": "#/$defs/SectionLocator"
+        },
+        "locator_subtype": {
+          "const": "section",
+          "title": "Locator Subtype",
+          "type": "string"
+        },
+        "provenance_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ArtifactRef"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "schema_version": {
+          "const": 1,
+          "default": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "source_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Source Id",
+          "type": "string"
+        },
+        "source_revision": {
+          "maxLength": 512,
+          "minLength": 1,
+          "title": "Source Revision",
+          "type": "string"
+        },
+        "source_sha256": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Source Sha256",
+          "type": "string"
+        },
+        "source_type": {
+          "const": "supplied_text",
+          "title": "Source Type",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_id",
+        "source_sha256",
+        "source_revision",
+        "evidence_artifact_sha256",
+        "kind",
+        "source_type",
+        "locator_subtype",
+        "locator"
+      ],
+      "title": "SectionPointer",
+      "type": "object"
+    },
+    "SuppliedLinePointer": {
+      "additionalProperties": false,
+      "properties": {
+        "evidence_artifact_sha256": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Evidence Artifact Sha256",
+          "type": "string"
+        },
+        "kind": {
+          "const": "file:line",
+          "title": "Kind",
+          "type": "string"
+        },
+        "locator": {
+          "$ref": "#/$defs/LineLocator"
+        },
+        "locator_subtype": {
+          "const": "line",
+          "title": "Locator Subtype",
+          "type": "string"
+        },
+        "provenance_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ArtifactRef"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "schema_version": {
+          "const": 1,
+          "default": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "source_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Source Id",
+          "type": "string"
+        },
+        "source_revision": {
+          "maxLength": 512,
+          "minLength": 1,
+          "title": "Source Revision",
+          "type": "string"
+        },
+        "source_sha256": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Source Sha256",
+          "type": "string"
+        },
+        "source_type": {
+          "const": "supplied_text",
+          "title": "Source Type",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_id",
+        "source_sha256",
+        "source_revision",
+        "evidence_artifact_sha256",
+        "kind",
+        "source_type",
+        "locator_subtype",
+        "locator"
+      ],
+      "title": "SuppliedLinePointer",
+      "type": "object"
+    },
+    "WindowSupport": {
+      "additionalProperties": false,
+      "properties": {
+        "N": {
+          "maximum": 5000,
+          "minimum": 0,
+          "title": "N",
+          "type": "integer"
+        },
+        "cohort_source_ids": {
+          "items": {
+            "maxLength": 256,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxLength": 5000,
+          "title": "Cohort Source Ids",
+          "type": "array"
+        },
+        "denominator": {
+          "maxLength": 301,
+          "minLength": 1,
+          "pattern": "^-?(0|[1-9][0-9]{0,299})$",
+          "title": "Denominator",
+          "type": "string"
+        },
+        "eligible_source_ids": {
+          "items": {
+            "maxLength": 256,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxLength": 5000,
+          "title": "Eligible Source Ids",
+          "type": "array"
+        },
+        "end_ordinal": {
+          "maximum": 3652059,
+          "minimum": 1,
+          "title": "End Ordinal",
+          "type": "integer"
+        },
+        "n": {
+          "maximum": 5000,
+          "minimum": 0,
+          "title": "N",
+          "type": "integer"
+        },
+        "numerator": {
+          "maxLength": 301,
+          "minLength": 1,
+          "pattern": "^-?(0|[1-9][0-9]{0,299})$",
+          "title": "Numerator",
+          "type": "string"
+        },
+        "start_ordinal": {
+          "maximum": 3652059,
+          "minimum": 1,
+          "title": "Start Ordinal",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "start_ordinal",
+        "end_ordinal",
+        "eligible_source_ids",
+        "cohort_source_ids",
+        "n",
+        "N",
+        "numerator",
+        "denominator"
+      ],
+      "title": "WindowSupport",
+      "type": "object"
+    }
+  },
+  "oneOf": [
+    {
+      "$ref": "#/$defs/SuppliedLinePointer"
+    },
+    {
+      "$ref": "#/$defs/LogPointer"
+    },
+    {
+      "$ref": "#/$defs/RepositoryPointer"
+    },
+    {
+      "$ref": "#/$defs/CodeReportPointer"
+    },
+    {
+      "$ref": "#/$defs/SectionPointer"
+    },
+    {
+      "$ref": "#/$defs/DocumentPointer"
+    },
+    {
+      "$ref": "#/$defs/ScreenshotPointer"
+    },
+    {
+      "$ref": "#/$defs/ProductPointer"
+    },
+    {
+      "$ref": "#/$defs/EventPointer"
+    },
+    {
+      "$ref": "#/$defs/MetricPointer"
+    },
+    {
+      "$ref": "#/$defs/FragmentPointer"
+    },
+    {
+      "$ref": "#/$defs/AdvisoryPointer"
+    }
+  ]
+}

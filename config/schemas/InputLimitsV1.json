@@ -1,0 +1,38 @@
+{
+  "additionalProperties": false,
+  "description": "Configuration representation only; no byte/row enforcement is implemented here.",
+  "properties": {
+    "max_analyzed_rows": {
+      "default": 250000,
+      "exclusiveMinimum": 0,
+      "title": "Max Analyzed Rows",
+      "type": "integer"
+    },
+    "max_file_bytes": {
+      "default": 209715200,
+      "exclusiveMinimum": 0,
+      "title": "Max File Bytes",
+      "type": "integer"
+    },
+    "max_groups": {
+      "default": 10000,
+      "exclusiveMinimum": 0,
+      "title": "Max Groups",
+      "type": "integer"
+    },
+    "max_line_bytes": {
+      "default": 16384,
+      "exclusiveMinimum": 0,
+      "title": "Max Line Bytes",
+      "type": "integer"
+    },
+    "max_output_bytes": {
+      "default": 67108864,
+      "exclusiveMinimum": 0,
+      "title": "Max Output Bytes",
+      "type": "integer"
+    }
+  },
+  "title": "InputLimitsV1",
+  "type": "object"
+}

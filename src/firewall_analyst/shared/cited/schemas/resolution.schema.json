@@ -1,0 +1,619 @@
+{
+  "$defs": {
+    "ArtifactRef": {
+      "additionalProperties": false,
+      "description": "Logical reference only; no file opener or URL authority.",
+      "properties": {
+        "artifact_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Artifact Id",
+          "type": "string"
+        },
+        "artifact_sha256": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Artifact Sha256",
+          "type": "string"
+        },
+        "profile_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Profile Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "artifact_id",
+        "artifact_sha256",
+        "profile_id"
+      ],
+      "title": "ArtifactRef",
+      "type": "object"
+    },
+    "Coverage": {
+      "additionalProperties": false,
+      "properties": {
+        "output_truncated": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Output Truncated"
+        },
+        "profile_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ArtifactRef"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "requested": {
+          "anyOf": [
+            {
+              "maximum": 9007199254740991,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Requested"
+        },
+        "returned": {
+          "anyOf": [
+            {
+              "maximum": 9007199254740991,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Returned"
+        },
+        "status": {
+          "enum": [
+            "complete",
+            "partial",
+            "unknown"
+          ],
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "status"
+      ],
+      "title": "Coverage",
+      "type": "object"
+    },
+    "EventRowProvenance": {
+      "additionalProperties": false,
+      "properties": {
+        "artifact_sha256": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Artifact Sha256",
+          "type": "string"
+        },
+        "current": {
+          "title": "Current",
+          "type": "boolean"
+        },
+        "event_record_sha256": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Event Record Sha256",
+          "type": "string"
+        },
+        "event_schema_sha256": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Event Schema Sha256",
+          "type": "string"
+        },
+        "generation_mode": {
+          "enum": [
+            "current",
+            "retained_historical"
+          ],
+          "title": "Generation Mode",
+          "type": "string"
+        },
+        "namespace_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Namespace Id",
+          "type": "string"
+        },
+        "parser_config_sha256": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Parser Config Sha256",
+          "type": "string"
+        },
+        "parser_implementation_sha256": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Parser Implementation Sha256",
+          "type": "string"
+        },
+        "parser_runtime_sha256": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Parser Runtime Sha256",
+          "type": "string"
+        },
+        "physical_line_number": {
+          "maximum": 10000000,
+          "minimum": 1,
+          "title": "Physical Line Number",
+          "type": "integer"
+        },
+        "processing_generation": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Processing Generation",
+          "type": "string"
+        },
+        "profile": {
+          "const": "s8-zeek-physical-row-v1",
+          "title": "Profile",
+          "type": "string"
+        },
+        "row_id": {
+          "pattern": "^[0-9a-f]{64}:[1-9][0-9]{0,7}$",
+          "title": "Row Id",
+          "type": "string"
+        },
+        "source_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Source Id",
+          "type": "string"
+        },
+        "source_sha256": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Source Sha256",
+          "type": "string"
+        }
+      },
+      "required": [
+        "namespace_id",
+        "source_id",
+        "source_sha256",
+        "artifact_sha256",
+        "generation_mode",
+        "current",
+        "profile",
+        "row_id",
+        "physical_line_number",
+        "event_record_sha256",
+        "processing_generation",
+        "parser_implementation_sha256",
+        "parser_runtime_sha256",
+        "parser_config_sha256",
+        "event_schema_sha256"
+      ],
+      "title": "EventRowProvenance",
+      "type": "object"
+    },
+    "MetricRowProvenance": {
+      "additionalProperties": false,
+      "properties": {
+        "N": {
+          "maximum": 5000,
+          "minimum": 0,
+          "title": "N",
+          "type": "integer"
+        },
+        "artifact_sha256": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Artifact Sha256",
+          "type": "string"
+        },
+        "compute_version": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Compute Version",
+          "type": "string"
+        },
+        "config_sha256": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Config Sha256",
+          "type": "string"
+        },
+        "current": {
+          "title": "Current",
+          "type": "boolean"
+        },
+        "dataset_id": {
+          "maxLength": 43,
+          "minLength": 43,
+          "pattern": "^s9-dataset-[0-9a-f]{32}$",
+          "title": "Dataset Id",
+          "type": "string"
+        },
+        "generation_mode": {
+          "enum": [
+            "current",
+            "retained_historical"
+          ],
+          "title": "Generation Mode",
+          "type": "string"
+        },
+        "metric_status": {
+          "enum": [
+            "ok",
+            "insufficient_data",
+            "unavailable"
+          ],
+          "title": "Metric Status",
+          "type": "string"
+        },
+        "metric_status_reason": {
+          "anyOf": [
+            {
+              "enum": [
+                "minimum_eligible_n_5",
+                "zero_eligible_impressions",
+                "arithmetic_out_of_range",
+                "missing_time",
+                "no_positive_impressions"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Metric Status Reason"
+        },
+        "n": {
+          "maximum": 5000,
+          "minimum": 0,
+          "title": "N",
+          "type": "integer"
+        },
+        "namespace_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Namespace Id",
+          "type": "string"
+        },
+        "profile": {
+          "const": "s9-metric-row.v1",
+          "title": "Profile",
+          "type": "string"
+        },
+        "row_sha256": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Row Sha256",
+          "type": "string"
+        },
+        "snapshot_id": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Snapshot Id",
+          "type": "string"
+        },
+        "source_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Source Id",
+          "type": "string"
+        },
+        "source_sha256": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Source Sha256",
+          "type": "string"
+        },
+        "tag_provenance_sha256": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Tag Provenance Sha256",
+          "type": "string"
+        }
+      },
+      "required": [
+        "namespace_id",
+        "source_id",
+        "source_sha256",
+        "artifact_sha256",
+        "generation_mode",
+        "current",
+        "profile",
+        "dataset_id",
+        "snapshot_id",
+        "row_sha256",
+        "config_sha256",
+        "tag_provenance_sha256",
+        "compute_version",
+        "n",
+        "N",
+        "metric_status",
+        "metric_status_reason"
+      ],
+      "title": "MetricRowProvenance",
+      "type": "object"
+    },
+    "ResolutionProvenance": {
+      "additionalProperties": false,
+      "properties": {
+        "coverage": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Coverage"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "geometry_provenance": {
+          "anyOf": [
+            {
+              "enum": [
+                "measured_ocr",
+                "native",
+                "model_claimed",
+                "none"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Geometry Provenance"
+        },
+        "ocr_confidence": {
+          "anyOf": [
+            {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Ocr Confidence"
+        },
+        "owner_resolution_scope": {
+          "anyOf": [
+            {
+              "const": "redacted_text",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Owner Resolution Scope"
+        },
+        "profile_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ArtifactRef"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "row": {
+          "anyOf": [
+            {
+              "discriminator": {
+                "mapping": {
+                  "s8-zeek-physical-row-v1": "#/$defs/EventRowProvenance",
+                  "s9-metric-row.v1": "#/$defs/MetricRowProvenance"
+                },
+                "propertyName": "profile"
+              },
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/EventRowProvenance"
+                },
+                {
+                  "$ref": "#/$defs/MetricRowProvenance"
+                }
+              ]
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Row"
+        },
+        "view_kind": {
+          "anyOf": [
+            {
+              "enum": [
+                "raw_source",
+                "redacted_result"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "View Kind"
+        }
+      },
+      "title": "ResolutionProvenance",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "checked_artifact_sha256": {
+      "anyOf": [
+        {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Checked Artifact Sha256"
+    },
+    "checked_source_revision": {
+      "anyOf": [
+        {
+          "maxLength": 512,
+          "minLength": 1,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Checked Source Revision"
+    },
+    "checked_source_sha256": {
+      "anyOf": [
+        {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Checked Source Sha256"
+    },
+    "excerpt": {
+      "anyOf": [
+        {
+          "maxLength": 32768,
+          "minLength": 1,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Excerpt"
+    },
+    "excerpt_sha256": {
+      "anyOf": [
+        {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Excerpt Sha256"
+    },
+    "provenance": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ResolutionProvenance"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "reason": {
+      "maxLength": 64,
+      "pattern": "^[a-z][a-z0-9_]{0,63}$",
+      "title": "Reason",
+      "type": "string"
+    },
+    "scope": {
+      "anyOf": [
+        {
+          "enum": [
+            "text",
+            "spatial",
+            "text_and_spatial",
+            "asserted_spatial"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Scope"
+    },
+    "status": {
+      "enum": [
+        "resolved",
+        "unsupported",
+        "stale",
+        "missing",
+        "invalid"
+      ],
+      "title": "Status",
+      "type": "string"
+    }
+  },
+  "required": [
+    "status",
+    "reason"
+  ],
+  "title": "Resolution",
+  "type": "object"
+}

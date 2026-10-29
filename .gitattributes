@@ -1,0 +1,6 @@
+* text=auto eol=lf
+.githooks/* text eol=lf
+
+# Sealed generator closure: retain exact first-freeze source bytes.
+src/firewall_analyst/domain/seedgen/freeze.py -text whitespace=cr-at-eol
+tests/seedgen/test_seedgen.py -text whitespace=cr-at-eol

@@ -1,0 +1,47 @@
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "firewall-traffic-analyst"
+version = "0.0.0"
+description = "Local Zeek traffic observations with source-checked evidence and inert reports."
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+license = "MIT"
+dependencies = [
+    "pydantic>=2.11,<3",
+]
+
+[project.scripts]
+fwa = "firewall_analyst.cli:main"
+
+[dependency-groups]
+dev = ["pytest>=8.4,<9", "ruff>=0.12,<1"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/firewall_analyst"]
+# Reference-data construction is separate from the distributable local CLI.
+exclude = ["/src/firewall_analyst/domain/seedgen"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--strict-config --strict-markers"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+extend-exclude = [
+    "src/firewall_analyst/shared/cited",
+    "src/firewall_analyst/shared/screen",
+    "src/firewall_analyst/shared/s3",
+    "src/firewall_analyst/shared/evalkit",
+    "tests/vendor/s5",
+    "tests/vendor/s6",
+    "tests/vendor/s3",
+    "tests/vendor/s3purpose",
+    "tests/vendor/s2",
+]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

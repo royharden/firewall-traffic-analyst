@@ -1,0 +1,215 @@
+{
+  "component": "S2 evalkit",
+  "copied": [
+    {
+      "git_blob": "e1c3b2ab26460a5245708feba9d011f6ea35ed60",
+      "policy": "unchanged_source",
+      "sha256": "1308c679caa5413229ba41de0e6fc4f9cdfd8d76fcb66c0cb1aa4597d2dade94",
+      "source": "src/rfr/shared/evalkit/README.md",
+      "target": "src/firewall_analyst/shared/evalkit/README.md"
+    },
+    {
+      "git_blob": "c0401907d6b0cb0491051cb4732385a1e78aaf3c",
+      "policy": "unchanged_source",
+      "sha256": "3017cebcf1f80d410a61712cd8207c1803e09954936ce33238d886760683843e",
+      "source": "src/rfr/shared/evalkit/__init__.py",
+      "target": "src/firewall_analyst/shared/evalkit/__init__.py"
+    },
+    {
+      "git_blob": "a6aea0bbbed151bc550200183d675d63d1aeed04",
+      "policy": "unchanged_source",
+      "sha256": "427ade409f4fb83b59a2d9952c890cb830096af948e1dc9d393a8aef47c23fa0",
+      "source": "src/rfr/shared/evalkit/corpus.py",
+      "target": "src/firewall_analyst/shared/evalkit/corpus.py"
+    },
+    {
+      "git_blob": "d4ed3a66d9f39ce948cc4d992617282c68a16484",
+      "policy": "unchanged_source",
+      "sha256": "5897c07d4b0f5d55dd8fee8cb74a325caaebc03b9e70bbf9c426c431d968f1b2",
+      "source": "src/rfr/shared/evalkit/identity.py",
+      "target": "src/firewall_analyst/shared/evalkit/identity.py"
+    },
+    {
+      "git_blob": "b90636c575f743eb5e93e13697effa40e0a858fb",
+      "policy": "unchanged_source",
+      "sha256": "d23bc8be5188a968388272580b259ad4af4b1a4cbf393be52d7933514235ed9d",
+      "source": "src/rfr/shared/evalkit/interfaces.py",
+      "target": "src/firewall_analyst/shared/evalkit/interfaces.py"
+    },
+    {
+      "git_blob": "43bcb7314dc6085a532765ff68725165f44dbc56",
+      "policy": "unchanged_source",
+      "sha256": "b18613383987a24569e7a9a133b2c212d858c2cf9ee147720b350c06126596c4",
+      "source": "src/rfr/shared/evalkit/models.py",
+      "target": "src/firewall_analyst/shared/evalkit/models.py"
+    },
+    {
+      "git_blob": "e6c46c9226cd4b80a732d0ec16a04e0a1e5b56f9",
+      "policy": "unchanged_source",
+      "sha256": "96d439870fe13d5c2ff5064d34eeb66fd5a96cf86fa5e5983ba243a6279aa283",
+      "source": "src/rfr/shared/evalkit/reporting.py",
+      "target": "src/firewall_analyst/shared/evalkit/reporting.py"
+    },
+    {
+      "git_blob": "e22ebf62aebac01a02e3a9be842a8584c68caa20",
+      "policy": "unchanged_source",
+      "sha256": "005c21b6d9f113db22132f0a660c3a2713e5aeaffb4dbb3c4c5349d66c194619",
+      "source": "src/rfr/shared/evalkit/resampling.py",
+      "target": "src/firewall_analyst/shared/evalkit/resampling.py"
+    },
+    {
+      "git_blob": "3a4871fed7ac5a5fe81b0bf6a5f3fe45fb27967c",
+      "policy": "unchanged_source",
+      "sha256": "b3a9078cf3265d750296907572dfeb66de780c01028b715cfdafb39dbad7bccb",
+      "source": "src/rfr/shared/evalkit/runner.py",
+      "target": "src/firewall_analyst/shared/evalkit/runner.py"
+    },
+    {
+      "git_blob": "cf5c8740da190f5a603eb4187b382ebb05f3e2f2",
+      "policy": "unchanged_source",
+      "sha256": "b44b9f4cea1b90d6524ddf9aa56327667a92340810b19000bb8d47702695ffb7",
+      "source": "src/rfr/shared/evalkit/schema.json",
+      "target": "src/firewall_analyst/shared/evalkit/schema.json"
+    },
+    {
+      "git_blob": "529b70140f40af2ae60a115a8903e68827258efe",
+      "policy": "unchanged_source",
+      "sha256": "9e9ec5e9ba86489c8938a87bd064debbedc143126952959729ab46fd624784dc",
+      "source": "src/rfr/shared/evalkit/statistics.py",
+      "target": "src/firewall_analyst/shared/evalkit/statistics.py"
+    },
+    {
+      "git_blob": "024bbc5e5a3503b3f719ccb4e68c773e4d840e2a",
+      "policy": "unchanged_license",
+      "sha256": "431665582156c442d0448d1f5cd2e45663ab96e6cf098711ffa58c4bb01b69e6",
+      "source": "LICENSE",
+      "target": "src/firewall_analyst/shared/evalkit/NOTICE.MIT"
+    },
+    {
+      "git_blob": "f726c49166ad55012fd5147339683f6b84dec82a",
+      "policy": "test_namespace_root_only",
+      "sha256": "fa889c24ed0c5599792de4f9a46dee7d09d8e9261ead18804bc1175b32507bff",
+      "source": "tests/evalkit/conftest.py",
+      "target": "tests/vendor/s2/conftest.py"
+    },
+    {
+      "git_blob": "434b7c1869438e1485e3b0963ecc9807085dee32",
+      "policy": "test_namespace_root_only",
+      "sha256": "c6127c483acb8c6fc25887bd677243b5297e275941f4fed461d659b6bfad0d18",
+      "source": "tests/evalkit/test_corpus.py",
+      "target": "tests/vendor/s2/test_corpus.py"
+    },
+    {
+      "git_blob": "9d1a5e1742453f63ad2b469475d22aa64c5d4d67",
+      "policy": "test_namespace_root_only",
+      "sha256": "9ce522799442e9acdc1a17b946ce4601205094df146725d27e20ea1eae23bcf1",
+      "source": "tests/evalkit/test_evalkit_detached.py",
+      "target": "tests/vendor/s2/test_evalkit_detached.py"
+    },
+    {
+      "git_blob": "fa0d4e0b5a803003995ecd9c067e2ffb49ee8326",
+      "policy": "test_namespace_root_only",
+      "sha256": "1ea3f864073ed745001fe00c9996f50d0f2eaaa665d1a5bdb92f6a4a6b84f2ea",
+      "source": "tests/evalkit/test_evalkit_moved_suite.py",
+      "target": "tests/vendor/s2/test_evalkit_moved_suite.py"
+    },
+    {
+      "git_blob": "377e552bb533b64ca6ebeba1168f8cea58f7fb0e",
+      "policy": "test_namespace_root_only",
+      "sha256": "e80a02fc8e1ff5e81b007de3d87534eb36b0001dadf2251a3de0a246360e0528",
+      "source": "tests/evalkit/test_heldout.py",
+      "target": "tests/vendor/s2/test_heldout.py"
+    },
+    {
+      "git_blob": "3235a52908c6c065e1c4629eb967ff5bdb346e92",
+      "policy": "test_namespace_root_only",
+      "sha256": "a5b0a537c7b0593fa7bab210d8e9e79c9aba6d462dfb3895f211d30293aa44b9",
+      "source": "tests/evalkit/test_reporting.py",
+      "target": "tests/vendor/s2/test_reporting.py"
+    },
+    {
+      "git_blob": "31db52f0b6b91ddb34fe80965de7d566075c8dd8",
+      "policy": "test_namespace_root_only",
+      "sha256": "64739c9b0b274542717a19285dd27968442d782979f138345c4e113861d54cef",
+      "source": "tests/evalkit/test_resampling.py",
+      "target": "tests/vendor/s2/test_resampling.py"
+    },
+    {
+      "git_blob": "f06981a4eea99d25e739b0ad88df560fd129c6ed",
+      "policy": "test_namespace_root_only",
+      "sha256": "365b553de35064978cb488049627cd09cf9de2b4c3adc59502c97244e8877a03",
+      "source": "tests/evalkit/test_runner.py",
+      "target": "tests/vendor/s2/test_runner.py"
+    },
+    {
+      "git_blob": "ea5ff4f45ac206371c8cb13953688bb5e5d59909",
+      "policy": "test_namespace_root_only",
+      "sha256": "c786947db47453f532a63894679d7b57886e4a2a5bdd3db6e03e582ae343ab65",
+      "source": "tests/evalkit/test_statistics.py",
+      "target": "tests/vendor/s2/test_statistics.py"
+    }
+  ],
+  "license": "NOTICE.MIT",
+  "limits": "Generic canonical math/runner/corpus/wires only; no app-domain scorer, actual source rights/human/seal/history validation, independent heldout execution, live/provider, S8 quality or app acceptance.",
+  "publication_sha256": "28dbf310102f0bf316525c4945d474b9bca8d7276a9753dd72cfbb824c4d2af3",
+  "schema_version": 1,
+  "source_commit": "249262839c4247ff37cc5a75c6a89a422738c759",
+  "source_policy": "11runtime/schema/README+MIT unchanged; tests namespace/root only",
+  "source_repository": "royharden/receipt-field-review",
+  "test_adaptations": [
+    {
+      "adapted_sha256": "fa889c24ed0c5599792de4f9a46dee7d09d8e9261ead18804bc1175b32507bff",
+      "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_sha256": "fa889c24ed0c5599792de4f9a46dee7d09d8e9261ead18804bc1175b32507bff",
+      "path": "tests/vendor/s2/conftest.py"
+    },
+    {
+      "adapted_sha256": "fe464922025447195c88ac4fa87a584e5659f31dc586b35320bfcb548142d0b4",
+      "diff_sha256": "5906f3517db514775f3f7391c1ece4439ff706c9f9e46450bc0410ba5e16e907",
+      "original_sha256": "c6127c483acb8c6fc25887bd677243b5297e275941f4fed461d659b6bfad0d18",
+      "path": "tests/vendor/s2/test_corpus.py"
+    },
+    {
+      "adapted_sha256": "bdcf6b512663999d07b55b102406572b2092cc8e20c0f96971f6b98024444a05",
+      "diff_sha256": "eeede263f9caf81f3bafdb0744f4172994ba1d2a183428885f3beea64a7d074a",
+      "original_sha256": "9ce522799442e9acdc1a17b946ce4601205094df146725d27e20ea1eae23bcf1",
+      "path": "tests/vendor/s2/test_evalkit_detached.py"
+    },
+    {
+      "adapted_sha256": "f9461dd6f63f6d8468c720a9548e6ddc63db35efe4419d67049373ad4da312a3",
+      "diff_sha256": "14915a75886709773371a3172a92cb363fd8f01b7226183a77b68748c3f1093c",
+      "original_sha256": "1ea3f864073ed745001fe00c9996f50d0f2eaaa665d1a5bdb92f6a4a6b84f2ea",
+      "path": "tests/vendor/s2/test_evalkit_moved_suite.py"
+    },
+    {
+      "adapted_sha256": "e8734b72c13d2e5a0a3e6653d2cfbe43baa6fb12be453b5b0b8b54284edd5a29",
+      "diff_sha256": "7db372f23b7deefc4300def74b35eed8c3d01f2d12942cc95a06d0a1ddd76beb",
+      "original_sha256": "e80a02fc8e1ff5e81b007de3d87534eb36b0001dadf2251a3de0a246360e0528",
+      "path": "tests/vendor/s2/test_heldout.py"
+    },
+    {
+      "adapted_sha256": "4821546ce8c0c0f0a0f44c4e93359a8c3e40fb07f0a4a3598df6344f140a69df",
+      "diff_sha256": "06d944ff87c5cf3ca2fcaf8fb41e3a26b10056fc24d96be8c26090bff60a999e",
+      "original_sha256": "a5b0a537c7b0593fa7bab210d8e9e79c9aba6d462dfb3895f211d30293aa44b9",
+      "path": "tests/vendor/s2/test_reporting.py"
+    },
+    {
+      "adapted_sha256": "95c5e2d4b13d89dc7c771dbed37eac49dceb6af6e5183c3eb88750a42c735ec0",
+      "diff_sha256": "cfdb22eb635baa76517a49daebed760618044d28caa2d462c023f9b0a009a6ac",
+      "original_sha256": "64739c9b0b274542717a19285dd27968442d782979f138345c4e113861d54cef",
+      "path": "tests/vendor/s2/test_resampling.py"
+    },
+    {
+      "adapted_sha256": "cca06cc5342412ccae41ea7ace0e88da79901d6f600bbe6b81b776d414b5a153",
+      "diff_sha256": "7ec693d8d8e900ff6da2cb6f9e406b2c97fd8fff1990949fc9199be309b87fe8",
+      "original_sha256": "365b553de35064978cb488049627cd09cf9de2b4c3adc59502c97244e8877a03",
+      "path": "tests/vendor/s2/test_runner.py"
+    },
+    {
+      "adapted_sha256": "bc31078db7b1fe34d0dd3ce73a6a24b0d0fbbe6ed17873d133696dafb9209728",
+      "diff_sha256": "283e5cb3622071129342cde2a3527019c10f2802da4385022bc33d7e741cc467",
+      "original_sha256": "c786947db47453f532a63894679d7b57886e4a2a5bdd3db6e03e582ae343ab65",
+      "path": "tests/vendor/s2/test_statistics.py"
+    }
+  ]
+}

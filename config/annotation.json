@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "kind": "generated_policy_inventory_no_runtime_overrides",
+  "mode": "disabled_by_default_canonical_offline_only",
+  "category_confidence": 0.6,
+  "confidence_policy": "uncalibrated_default",
+  "triage_levels": [
+    "routine",
+    "review",
+    "priority",
+    "urgent"
+  ],
+  "max_projection_utf8_bytes": 8192,
+  "screen_method": "rules",
+  "policy_sha256": "191a73d72435562e67c457cbcb52ac2be99844f325eaffcb4630f0b7b8377c7c",
+  "external_dispatches": 0,
+  "canonical_s3_s6_offline_consumer": true,
+  "live_adapters_available": false
+}

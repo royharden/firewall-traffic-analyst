@@ -1,0 +1,2 @@
+{"ts":1700000000.000001,"uid":"C12345678","id.orig_h":"192.0.2.1","id.orig_p":40000,"id.resp_h":"198.51.100.2","id.resp_p":443,"proto":"tcp","orig_bytes":0,"resp_bytes":null}
+{"ts":1700000001,"id.orig_h":"192.0.2.1","id.orig_p":8,"id.resp_h":"198.51.100.2","id.resp_p":0,"proto":"icmp","orig_bytes":null,"resp_bytes":0}

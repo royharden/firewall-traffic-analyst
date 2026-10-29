@@ -1,0 +1,548 @@
+{
+  "$defs": {
+    "MetricSupport": {
+      "additionalProperties": false,
+      "description": "Whole retained producer support. A valid record can exceed citation byte caps.",
+      "properties": {
+        "N": {
+          "maximum": 5000,
+          "minimum": 0,
+          "title": "N",
+          "type": "integer"
+        },
+        "cohort_semantics": {
+          "enum": [
+            "rate_cohort",
+            "trend_union",
+            "diagnostic_single",
+            "availability_empty"
+          ],
+          "title": "Cohort Semantics",
+          "type": "string"
+        },
+        "computed_by": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Computed By",
+          "type": "string"
+        },
+        "definition": {
+          "maxLength": 32768,
+          "minLength": 1,
+          "title": "Definition",
+          "type": "string"
+        },
+        "denominator": {
+          "maxLength": 301,
+          "minLength": 1,
+          "pattern": "^-?(0|[1-9][0-9]{0,299})$",
+          "title": "Denominator",
+          "type": "string"
+        },
+        "dimension": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Dimension",
+          "type": "string"
+        },
+        "eligible_source_ids": {
+          "items": {
+            "maxLength": 256,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxLength": 5000,
+          "title": "Eligible Source Ids",
+          "type": "array"
+        },
+        "excluded_size": {
+          "maximum": 5000,
+          "minimum": 0,
+          "title": "Excluded Size",
+          "type": "integer"
+        },
+        "excluded_source_ids": {
+          "items": {
+            "maxLength": 256,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxLength": 5000,
+          "title": "Excluded Source Ids",
+          "type": "array"
+        },
+        "family": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Family",
+          "type": "string"
+        },
+        "key": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Key",
+          "type": "string"
+        },
+        "metric_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Metric Id",
+          "type": "string"
+        },
+        "n": {
+          "maximum": 5000,
+          "minimum": 0,
+          "title": "N",
+          "type": "integer"
+        },
+        "numerator": {
+          "maxLength": 301,
+          "minLength": 1,
+          "pattern": "^-?(0|[1-9][0-9]{0,299})$",
+          "title": "Numerator",
+          "type": "string"
+        },
+        "sample_size": {
+          "maximum": 5000,
+          "minimum": 0,
+          "title": "Sample Size",
+          "type": "integer"
+        },
+        "schema_version": {
+          "const": 1,
+          "default": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "scope": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Scope",
+          "type": "string"
+        },
+        "snapshot_id": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Snapshot Id",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "ok",
+            "insufficient_data",
+            "unavailable"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "status_reason": {
+          "anyOf": [
+            {
+              "enum": [
+                "minimum_eligible_n_5",
+                "zero_eligible_impressions",
+                "arithmetic_out_of_range",
+                "missing_time",
+                "no_positive_impressions"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Status Reason"
+        },
+        "unit": {
+          "enum": [
+            "ratio",
+            "percentage_points"
+          ],
+          "title": "Unit",
+          "type": "string"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "maxLength": 43,
+              "minLength": 1,
+              "pattern": "^-?(0|[1-9][0-9]{0,31})(\\.[0-9]{1,8})?$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Value"
+        },
+        "windows": {
+          "items": {
+            "$ref": "#/$defs/WindowSupport"
+          },
+          "maxLength": 2,
+          "title": "Windows",
+          "type": "array"
+        }
+      },
+      "required": [
+        "metric_id",
+        "snapshot_id",
+        "scope",
+        "definition",
+        "value",
+        "unit",
+        "sample_size",
+        "excluded_size",
+        "computed_by",
+        "status",
+        "status_reason",
+        "n",
+        "N",
+        "cohort_semantics",
+        "numerator",
+        "denominator",
+        "family",
+        "dimension",
+        "key",
+        "eligible_source_ids",
+        "excluded_source_ids",
+        "windows"
+      ],
+      "title": "MetricSupport",
+      "type": "object"
+    },
+    "PlatformSummary": {
+      "additionalProperties": false,
+      "properties": {
+        "eligible_hour_rows": {
+          "maximum": 5000,
+          "minimum": 0,
+          "title": "Eligible Hour Rows",
+          "type": "integer"
+        },
+        "missing_format_rows": {
+          "maximum": 5000,
+          "minimum": 0,
+          "title": "Missing Format Rows",
+          "type": "integer"
+        },
+        "missing_time_rows": {
+          "maximum": 5000,
+          "minimum": 0,
+          "title": "Missing Time Rows",
+          "type": "integer"
+        },
+        "missing_topic_rows": {
+          "maximum": 5000,
+          "minimum": 0,
+          "title": "Missing Topic Rows",
+          "type": "integer"
+        },
+        "platform": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Platform",
+          "type": "string"
+        },
+        "positive_impression_rows": {
+          "maximum": 5000,
+          "minimum": 0,
+          "title": "Positive Impression Rows",
+          "type": "integer"
+        },
+        "rows": {
+          "maximum": 5000,
+          "minimum": 0,
+          "title": "Rows",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "platform",
+        "rows",
+        "positive_impression_rows",
+        "missing_time_rows",
+        "eligible_hour_rows",
+        "missing_topic_rows",
+        "missing_format_rows"
+      ],
+      "title": "PlatformSummary",
+      "type": "object"
+    },
+    "SnapshotIdentity": {
+      "additionalProperties": false,
+      "properties": {
+        "compute_version": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Compute Version",
+          "type": "string"
+        },
+        "config_json": {
+          "maxLength": 32768,
+          "minLength": 2,
+          "title": "Config Json",
+          "type": "string"
+        },
+        "dataset_fingerprint": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Dataset Fingerprint",
+          "type": "string"
+        },
+        "identity_version": {
+          "const": "snapshot-identity.v1",
+          "default": "snapshot-identity.v1",
+          "title": "Identity Version",
+          "type": "string"
+        },
+        "schema_version": {
+          "const": 1,
+          "default": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "tag_provenance": {
+          "items": {
+            "$ref": "#/$defs/TagProvenance"
+          },
+          "maxLength": 10000,
+          "title": "Tag Provenance",
+          "type": "array"
+        }
+      },
+      "required": [
+        "dataset_fingerprint",
+        "tag_provenance",
+        "config_json",
+        "compute_version"
+      ],
+      "title": "SnapshotIdentity",
+      "type": "object"
+    },
+    "TagProvenance": {
+      "additionalProperties": false,
+      "properties": {
+        "field": {
+          "enum": [
+            "topic",
+            "format"
+          ],
+          "title": "Field",
+          "type": "string"
+        },
+        "method": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Method",
+          "type": "string"
+        },
+        "model": {
+          "anyOf": [
+            {
+              "maxLength": 256,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Model"
+        },
+        "schema_version": {
+          "const": 1,
+          "default": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "source_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Source Id",
+          "type": "string"
+        },
+        "taxonomy_version": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Taxonomy Version",
+          "type": "string"
+        },
+        "threshold": {
+          "anyOf": [
+            {
+              "maxLength": 43,
+              "minLength": 1,
+              "pattern": "^-?(0|[1-9][0-9]{0,31})(\\.[0-9]{1,8})?$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Threshold"
+        },
+        "value": {
+          "maxLength": 16384,
+          "minLength": 1,
+          "title": "Value",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_id",
+        "field",
+        "value",
+        "method",
+        "taxonomy_version"
+      ],
+      "title": "TagProvenance",
+      "type": "object"
+    },
+    "WindowSupport": {
+      "additionalProperties": false,
+      "properties": {
+        "N": {
+          "maximum": 5000,
+          "minimum": 0,
+          "title": "N",
+          "type": "integer"
+        },
+        "cohort_source_ids": {
+          "items": {
+            "maxLength": 256,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxLength": 5000,
+          "title": "Cohort Source Ids",
+          "type": "array"
+        },
+        "denominator": {
+          "maxLength": 301,
+          "minLength": 1,
+          "pattern": "^-?(0|[1-9][0-9]{0,299})$",
+          "title": "Denominator",
+          "type": "string"
+        },
+        "eligible_source_ids": {
+          "items": {
+            "maxLength": 256,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxLength": 5000,
+          "title": "Eligible Source Ids",
+          "type": "array"
+        },
+        "end_ordinal": {
+          "maximum": 3652059,
+          "minimum": 1,
+          "title": "End Ordinal",
+          "type": "integer"
+        },
+        "n": {
+          "maximum": 5000,
+          "minimum": 0,
+          "title": "N",
+          "type": "integer"
+        },
+        "numerator": {
+          "maxLength": 301,
+          "minLength": 1,
+          "pattern": "^-?(0|[1-9][0-9]{0,299})$",
+          "title": "Numerator",
+          "type": "string"
+        },
+        "start_ordinal": {
+          "maximum": 3652059,
+          "minimum": 1,
+          "title": "Start Ordinal",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "start_ordinal",
+        "end_ordinal",
+        "eligible_source_ids",
+        "cohort_source_ids",
+        "n",
+        "N",
+        "numerator",
+        "denominator"
+      ],
+      "title": "WindowSupport",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "algorithm": {
+      "const": "s9-metric-evidence.v1",
+      "title": "Algorithm",
+      "type": "string"
+    },
+    "dataset_fingerprint": {
+      "maxLength": 64,
+      "minLength": 64,
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Dataset Fingerprint",
+      "type": "string"
+    },
+    "dataset_id": {
+      "maxLength": 43,
+      "minLength": 43,
+      "pattern": "^s9-dataset-[0-9a-f]{32}$",
+      "title": "Dataset Id",
+      "type": "string"
+    },
+    "namespace_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Namespace Id",
+      "type": "string"
+    },
+    "platform_summary": {
+      "items": {
+        "$ref": "#/$defs/PlatformSummary"
+      },
+      "maxLength": 5000,
+      "title": "Platform Summary",
+      "type": "array"
+    },
+    "rows": {
+      "items": {
+        "$ref": "#/$defs/MetricSupport"
+      },
+      "maxLength": 10000,
+      "title": "Rows",
+      "type": "array"
+    },
+    "snapshot_id": {
+      "maxLength": 64,
+      "minLength": 64,
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Snapshot Id",
+      "type": "string"
+    },
+    "snapshot_identity": {
+      "$ref": "#/$defs/SnapshotIdentity"
+    }
+  },
+  "required": [
+    "algorithm",
+    "namespace_id",
+    "dataset_id",
+    "dataset_fingerprint",
+    "snapshot_id",
+    "snapshot_identity",
+    "rows",
+    "platform_summary"
+  ],
+  "title": "MetricArtifact",
+  "type": "object"
+}

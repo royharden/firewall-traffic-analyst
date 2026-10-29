@@ -1,0 +1,107 @@
+{
+  "component": "S5",
+  "source_commit": "61c15cd05041c9c9360ff4e727a46f6896dc13c3",
+  "publication_sha256": "90c14efd8e4bc07ec27415263a4d3b22343cacd7b3a6ca41a5d8741b4719e5df",
+  "licence": "MIT",
+  "source_modules_unchanged": true,
+  "files": [
+    {
+      "source_path": "src/changelog_advisor/shared/cited/__init__.py",
+      "source_git_blob": "b4564484900407c47220008c615f5b709b4373b9",
+      "source_sha256": "b4de107dfa4bdf5840797e236fd00e23e268268875b3bfecfe39141462106b19",
+      "copied_path": "src/firewall_analyst/shared/cited/__init__.py",
+      "copy_sha256": "b4de107dfa4bdf5840797e236fd00e23e268268875b3bfecfe39141462106b19",
+      "source_module_unchanged": true,
+      "test_mapping": null
+    },
+    {
+      "source_path": "src/changelog_advisor/shared/cited/models.py",
+      "source_git_blob": "54ea8e9adb4e6e964eba5375638cf20f96bd86ac",
+      "source_sha256": "9682555a0d988b2e07dc40ac553ff18dc23c6ff389b72c7d93fd99bc81b2dab1",
+      "copied_path": "src/firewall_analyst/shared/cited/models.py",
+      "copy_sha256": "9682555a0d988b2e07dc40ac553ff18dc23c6ff389b72c7d93fd99bc81b2dab1",
+      "source_module_unchanged": true,
+      "test_mapping": null
+    },
+    {
+      "source_path": "src/changelog_advisor/shared/cited/registry.py",
+      "source_git_blob": "733347fcbcb75d598767288d88969eb7b75c3d38",
+      "source_sha256": "83277f922b9975ded0b12eb09566278aadaa64f03912e765d7864dedea124d7c",
+      "copied_path": "src/firewall_analyst/shared/cited/registry.py",
+      "copy_sha256": "83277f922b9975ded0b12eb09566278aadaa64f03912e765d7864dedea124d7c",
+      "source_module_unchanged": true,
+      "test_mapping": null
+    },
+    {
+      "source_path": "src/changelog_advisor/shared/cited/schema.py",
+      "source_git_blob": "6cff940535898aae0c1957ac0e907b58e066f5ad",
+      "source_sha256": "0ba2c5de1caa81841e738fd15bc126b4f6cceacf62f033974691919187fe6d24",
+      "copied_path": "src/firewall_analyst/shared/cited/schema.py",
+      "copy_sha256": "0ba2c5de1caa81841e738fd15bc126b4f6cceacf62f033974691919187fe6d24",
+      "source_module_unchanged": true,
+      "test_mapping": null
+    },
+    {
+      "source_path": "src/changelog_advisor/shared/cited/memory.py",
+      "source_git_blob": "b4e8123edf14c2385b1c1fa35c25538f4b159078",
+      "source_sha256": "eb4eee4845ce8fc9a49ab1660e20823020ab389d986f576a06e202855bb6329a",
+      "copied_path": "src/firewall_analyst/shared/cited/memory.py",
+      "copy_sha256": "eb4eee4845ce8fc9a49ab1660e20823020ab389d986f576a06e202855bb6329a",
+      "source_module_unchanged": true,
+      "test_mapping": null
+    },
+    {
+      "source_path": "src/changelog_advisor/shared/cited/assessment.py",
+      "source_git_blob": "a0573cadc46eba032a7bca18dfaebe257f7f646f",
+      "source_sha256": "3b9f89a6e69fc4183605f1a89ddb16a38454294284aeb7666e25b5b835092121",
+      "copied_path": "src/firewall_analyst/shared/cited/assessment.py",
+      "copy_sha256": "3b9f89a6e69fc4183605f1a89ddb16a38454294284aeb7666e25b5b835092121",
+      "source_module_unchanged": true,
+      "test_mapping": null
+    },
+    {
+      "source_path": "tests/cited/test_memory.py",
+      "source_git_blob": "dcc6c4e2f3539a7a252870e2532440a8d327eff1",
+      "source_sha256": "f64f325d93de6ab85a7d87b386c13ec9533f7c94ae4d5e448fe775e15576ee6c",
+      "copied_path": "tests/vendor/s5/test_memory.py",
+      "copy_sha256": "ea4d8350d16526c9979e93158486f877fc51d3304f9500ce3f195d52cbe9ac3d",
+      "source_module_unchanged": false,
+      "test_mapping": {
+        "original": "tests\\vendor\\s5\\owner-test_memory.py.txt",
+        "actual": "tests\\vendor\\s5\\test_memory.py",
+        "adaptation": "Only namedconsumerimport, relocatedroot/sourcepackagepath; originalexactGitblobbytes preserved .txt"
+      }
+    },
+    {
+      "source_path": "tests/cited/test_memory_detached.py",
+      "source_git_blob": "2150c83b598d717ff2cfacae95ef93490789c657",
+      "source_sha256": "2c53f43b553ad4f00c8c8ce6932d68fa77a9883f99cdfddab856b08d784160f7",
+      "copied_path": "tests/vendor/s5/test_memory_detached.py",
+      "copy_sha256": "06e39ae16f1e38befb428eb6513e22ed1b3fd6ff4959711c8a24f0ad41ced6d7",
+      "source_module_unchanged": false,
+      "test_mapping": {
+        "original": "tests\\vendor\\s5\\owner-test_memory_detached.py.txt",
+        "actual": "tests\\vendor\\s5\\test_memory_detached.py",
+        "adaptation": "Only namedconsumerimport, relocatedroot/sourcepackagepath; originalexactGitblobbytes preserved .txt"
+      }
+    },
+    {
+      "source_path": "LICENSE",
+      "source_git_blob": "024bbc5e5a3503b3f719ccb4e68c773e4d840e2a",
+      "source_sha256": "431665582156c442d0448d1f5cd2e45663ab96e6cf098711ffa58c4bb01b69e6",
+      "copied_path": "src/firewall_analyst/shared/cited/LICENSE",
+      "copy_sha256": "431665582156c442d0448d1f5cd2e45663ab96e6cf098711ffa58c4bb01b69e6",
+      "source_module_unchanged": true,
+      "test_mapping": null
+    },
+    {
+      "source_path": "tests/cited/test_models.py",
+      "source_git_blob": "ddc007194d7bbc78e860722761342137b2670c23",
+      "source_sha256": "a2baaff6bc7c744b9892f0545cdd1ef218a8f97cd574c269926686ff37e9322f",
+      "copied_path": "tests/vendor/s5/owner-test_models.py.txt",
+      "purpose": "syntheticdomainhelper for requirednegative; modeltests notcollected",
+      "copy_sha256": "a2baaff6bc7c744b9892f0545cdd1ef218a8f97cd574c269926686ff37e9322f"
+    }
+  ],
+  "consumer_execution": "47S5+63S6+1independent movedintegration tests pass; no unsupportedeventadapter oractualS3typed claim"
+}

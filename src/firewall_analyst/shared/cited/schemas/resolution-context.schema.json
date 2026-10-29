@@ -1,0 +1,85 @@
+{
+  "$defs": {
+    "ArtifactRef": {
+      "additionalProperties": false,
+      "description": "Logical reference only; no file opener or URL authority.",
+      "properties": {
+        "artifact_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Artifact Id",
+          "type": "string"
+        },
+        "artifact_sha256": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Artifact Sha256",
+          "type": "string"
+        },
+        "profile_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Profile Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "artifact_id",
+        "artifact_sha256",
+        "profile_id"
+      ],
+      "title": "ArtifactRef",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "Caller-supplied policy references; structural shape does not grant access.",
+  "properties": {
+    "access_policy_ref": {
+      "$ref": "#/$defs/ArtifactRef"
+    },
+    "generation_mode": {
+      "default": "current",
+      "enum": [
+        "current",
+        "retained_historical"
+      ],
+      "title": "Generation Mode",
+      "type": "string"
+    },
+    "generation_policy_ref": {
+      "$ref": "#/$defs/ArtifactRef"
+    },
+    "namespace_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Namespace Id",
+      "type": "string"
+    },
+    "required_scope": {
+      "anyOf": [
+        {
+          "enum": [
+            "text",
+            "spatial",
+            "text_and_spatial"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Required Scope"
+    }
+  },
+  "required": [
+    "namespace_id",
+    "access_policy_ref",
+    "generation_policy_ref"
+  ],
+  "title": "ResolutionContext",
+  "type": "object"
+}

@@ -1,0 +1,21 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "physical_line": {
+      "minimum": 1,
+      "title": "Physical Line",
+      "type": "integer"
+    },
+    "reason_code": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$",
+      "title": "Reason Code",
+      "type": "string"
+    }
+  },
+  "required": [
+    "physical_line",
+    "reason_code"
+  ],
+  "title": "ParseIssue",
+  "type": "object"
+}

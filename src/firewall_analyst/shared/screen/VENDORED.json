@@ -1,0 +1,95 @@
+{
+  "component": "S6",
+  "source_commit": "419eaf97f605637a9aece2f43c25b04ccb3dabdf",
+  "publication_sha256": "d61501e6bd620b7595964c3e484f17cdc89eeee6f8e86ee9c2a833b8b0f728e1",
+  "licence": "MIT",
+  "source_modules_unchanged": true,
+  "files": [
+    {
+      "source_path": "contracts/screen/README.md",
+      "source_git_blob": "93e4cbc611c341c95639df63abfc197d7979a84d",
+      "source_sha256": "8514ab3a80a60aea69175d4158f6da315a9fbffcbc084e0f8569bdab3008e5b4",
+      "copied_path": "src/firewall_analyst/shared/screen/OWNER-README.md",
+      "copy_sha256": "8514ab3a80a60aea69175d4158f6da315a9fbffcbc084e0f8569bdab3008e5b4",
+      "source_module_unchanged": true,
+      "test_mapping": null
+    },
+    {
+      "source_path": "src/issue_triage/shared/screen/__init__.py",
+      "source_git_blob": "0b1c299659558c561bba53118a64031020aae62e",
+      "source_sha256": "847da0a534d478e8be45e2de1eef47613bc3f1058ed85e6b5c5f9e99b222e42b",
+      "copied_path": "src/firewall_analyst/shared/screen/__init__.py",
+      "copy_sha256": "847da0a534d478e8be45e2de1eef47613bc3f1058ed85e6b5c5f9e99b222e42b",
+      "source_module_unchanged": true,
+      "test_mapping": null
+    },
+    {
+      "source_path": "src/issue_triage/shared/screen/models.py",
+      "source_git_blob": "891d6491df803b945aecd30cfe887d546ee5306c",
+      "source_sha256": "1d33ba786df2cdbd81bd944ad69c11108d220fa268eca4960b4c51dcf1bab252",
+      "copied_path": "src/firewall_analyst/shared/screen/models.py",
+      "copy_sha256": "1d33ba786df2cdbd81bd944ad69c11108d220fa268eca4960b4c51dcf1bab252",
+      "source_module_unchanged": true,
+      "test_mapping": null
+    },
+    {
+      "source_path": "src/issue_triage/shared/screen/prepare.py",
+      "source_git_blob": "0c09c41c7a235926054a953ab3062ccbf8c71b66",
+      "source_sha256": "955e21a840cf00e56b7d431e3d0cf5aa2a5cd66de3e61433a054f31249bdb9dc",
+      "copied_path": "src/firewall_analyst/shared/screen/prepare.py",
+      "copy_sha256": "955e21a840cf00e56b7d431e3d0cf5aa2a5cd66de3e61433a054f31249bdb9dc",
+      "source_module_unchanged": true,
+      "test_mapping": null
+    },
+    {
+      "source_path": "src/issue_triage/shared/screen/questions.py",
+      "source_git_blob": "6259493d681c5fdfd916f7b244b2d284318c6dad",
+      "source_sha256": "663ad1437f6abc709caa5b0115051f6eee41debfd41a74e213895651fd47aec8",
+      "copied_path": "src/firewall_analyst/shared/screen/questions.py",
+      "copy_sha256": "663ad1437f6abc709caa5b0115051f6eee41debfd41a74e213895651fd47aec8",
+      "source_module_unchanged": true,
+      "test_mapping": null
+    },
+    {
+      "source_path": "src/issue_triage/shared/screen/rules.py",
+      "source_git_blob": "e8b158e66dbb4d1cc128a82e0dcf61b44f8747dd",
+      "source_sha256": "c0b8920063f0eb3157d44cc76995a459e40267c78d9a5feab3c706ae85357a9b",
+      "copied_path": "src/firewall_analyst/shared/screen/rules.py",
+      "copy_sha256": "c0b8920063f0eb3157d44cc76995a459e40267c78d9a5feab3c706ae85357a9b",
+      "source_module_unchanged": true,
+      "test_mapping": null
+    },
+    {
+      "source_path": "src/issue_triage/shared/screen/typed.py",
+      "source_git_blob": "45b83cf81f563f8963f4a3319b8fc0cbe6752d1e",
+      "source_sha256": "54022116c9c8bdade586f60cca058f90709a43e24fddef109bbcea2bac7d92bc",
+      "copied_path": "src/firewall_analyst/shared/screen/typed.py",
+      "copy_sha256": "54022116c9c8bdade586f60cca058f90709a43e24fddef109bbcea2bac7d92bc",
+      "source_module_unchanged": true,
+      "test_mapping": null
+    },
+    {
+      "source_path": "tests/screen/test_screen.py",
+      "source_git_blob": "a0207b74b87760f64b9d00d314e379d552fe1479",
+      "source_sha256": "3c2ba42b14a8909135a8a9bd5f0079a7fb50294c9b2fdf7176c55f1b709eee47",
+      "copied_path": "tests/vendor/s6/test_screen.py",
+      "copy_sha256": "2ac7d8ce31ff65801721572794cbb3903b24f82b1ba5e29deba0a121b4777e57",
+      "source_module_unchanged": false,
+      "test_mapping": {
+        "original": "tests\\vendor\\s6\\owner-test_screen.py.txt",
+        "actual": "tests\\vendor\\s6\\test_screen.py",
+        "adaptation": "Only namedconsumerimport, relocatedroot/sourcepackagepath; originalexactGitblobbytes preserved .txt"
+      }
+    },
+    {
+      "source_path": "LICENSE",
+      "source_git_blob": "024bbc5e5a3503b3f719ccb4e68c773e4d840e2a",
+      "source_sha256": "431665582156c442d0448d1f5cd2e45663ab96e6cf098711ffa58c4bb01b69e6",
+      "copied_path": "src/firewall_analyst/shared/screen/LICENSE",
+      "copy_sha256": "431665582156c442d0448d1f5cd2e45663ab96e6cf098711ffa58c4bb01b69e6",
+      "source_module_unchanged": true,
+      "test_mapping": null
+    }
+  ],
+  "consumer_execution": "47S5+63S6+1independent movedintegration tests pass; no unsupportedeventadapter oractualS3typed claim"
+}
